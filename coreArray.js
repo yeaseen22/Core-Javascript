@@ -50,17 +50,20 @@ objForFindMe.value = 500;
 
 // make delete operation
 // splice 
-const indexForDeleFindIn = arr2.findIndex( (item) => item.id == 4 );
-const arrForDeleSplice = arr2.splice( indexForDeleFindIn, 1 );
-console.log(arrForDeleSplice);
+// const indexForDeleFindIn = arr2.findIndex( (item) => item.id == 4 );
+// const arrForDeleSplice = arr2.splice( indexForDeleFindIn, 1 );
+// console.log(arrForDeleSplice);
+// console.log(arr2);
+
+
+// filter is immutable
+const arrForDelFilter = arr2.filter( ( item ) => item.id !== 4 );
+
 console.log(arr2);
+console.log(arrForDelFilter);
 
 
-// filter
-
-
-
-
+// go to onjectBasic js file
 
 
 
