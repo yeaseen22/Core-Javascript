@@ -192,8 +192,22 @@ console.timeEnd('obj'); // 0.019ms
 
 
 
+// important 3 javascript function
+// map, filter, reduce
 
+/**
+ * Map [same length as original array]
+ * Filter [with filtered item]
+ * Reduce [Know one knows]
+ */
 
+const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
+
+const learReduce = numbers.reduce(  (acc, cur) => {
+    acc+= cur.toString();
+    return acc;
+}, '');
+console.log(learReduce);
 
 
 
