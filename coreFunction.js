@@ -29,7 +29,7 @@ function addAll2(){
     return sum;
 }
 var result = addAll2(1,2,3)
-console.log(result);
+// console.log(result);
 
 
 // function expression
@@ -41,6 +41,43 @@ var addition = function  (a,b) {  //anonymous
     return a+b;
 }
 
-setTimeout( function () {
-    console.log('I am called after 2 second');
-}, 2000 );
+// setTimeout( function () {
+//     console.log('I am called after 2 second');
+// }, 2000 );
+
+
+// inner function
+function something(name, greet){
+
+    function firstName() {
+        if(name){
+
+            return name.splite('')[0]
+        }else{
+            return '';
+        }
+    }
+
+    var message = greet + ' '+firstName(); 
+}
+
+// something('Good Morning', 'Hm Nayem')
+
+// function scope
+
+function test(n) {
+    function a(){
+        return n % 3 === 0;
+    }
+    function b(){
+        return n % 5 === 0
+    }
+
+    if(a() && b() ){
+        console.log('Both numbers are divisibaled by 3 and 5');
+    } else{
+        console.log('Not a valid number');
+    }
+}
+
+test(15);
