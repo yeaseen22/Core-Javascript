@@ -122,4 +122,53 @@ var result1 = sample(3,4, function (First, Second){
     return First + Second;
 })
 
-console.log(result1);
+// console.log(result1);
+
+
+
+// return function from another function
+function greet(msg){
+    function greeting(name){
+        return msg + ', ' + name;
+    }
+
+    return greeting;
+}
+var msgRetu = greet('Hello')('Shegufa Tarajum');
+// console.log(msgRetu);
+// var returnGreeting = msgRetu('Shegufa Taranjum');
+// console.log(returnGreeting);
+
+// console.log(msgRetu('Shegufa Tarajum'));
+
+
+
+// Currying in javascript
+
+function currying(a){
+    return function (b){
+        return function (c){
+            return a+b+c;
+        }
+    }
+}
+
+var sum = currying(10)(15)(5);
+// console.log(sum);
+
+
+// function composition
+function print(inp){
+    console.log(inp);
+}
+
+function multiplyByFive(n){
+    return n * 5;
+}
+
+function add(a,b){
+    return a + b;
+}
+
+print( multiplyByFive(add(3,5)) )
+
