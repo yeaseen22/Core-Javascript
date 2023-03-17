@@ -30,6 +30,8 @@ if(true){
     letVariable3.javascrips = 'Hi'
     console.log(letVariable3);
 }
+
+
 // console.log(letVariable3)
 
 const myHeading = document.querySelector('h1');

@@ -154,7 +154,7 @@ students2[idToUpdateForStudent2] = {
 // deleted data from obj
 delete students2[idToUpdateForStudent2];
 
-for(let key in students2){
+for (let key in students2) {
     // console.log(students2[kye]);
 }
 
@@ -163,7 +163,7 @@ for(let key in students2){
 //     console.log(student.name, student.email);
 // });
 
-Object.values(students2).forEach( (student) => {
+Object.values(students2).forEach((student) => {
     // console.log(student);
 });
 
@@ -203,11 +203,61 @@ console.timeEnd('obj'); // 0.019ms
 
 const numbers = [1, 2, 3, 4, false, '', NaN, 5, 6];
 
-const learReduce = numbers.reduce(  (acc, cur) => {
-    acc+= cur.toString();
+// const learReduce = numbers.reduce(  (acc, cur) => {
+//     acc+= cur.toString();
+//     return acc;
+// }, '');
+// console.log(learReduce);
+
+
+const learReduce = numbers.reduce((acc, cur) => {
+    if (cur) {
+        acc += cur.toString();
+    }
     return acc;
 }, '');
-console.log(learReduce);
+// console.log(learReduce); /// 123456
+
+
+const names = [
+    'Ayman',
+    'Abu Rayhan',
+    'Anik',
+    'Elias Emon',
+    'Engr. Sabbir',
+    'Fahim Faisal',
+    'Feroz Khan',
+    'Habib',
+    'HM Azizul',
+    'Hridoy Saha',
+    'Jahid Hassan',
+    'Johir',
+    'Md Al-Amin',
+    'Md Arafatul',
+    'Md Ashraful',
+    'Parvez',
+];
+
+// const namesGroup = {
+//     A: ['Ayman', 'Abu Rayhan', 'Anik'],
+//     E: ['Elias Emon', 'Engr. Sabbir'],
+//     F: ['Fahim Faisal', 'Feroz Khan'],
+// };
+
+
+const nameGroup = names.reduce((acc, cur) =>{
+    const firstLetter = cur[0].toUpperCase();
+    if(firstLetter in acc) {
+        acc[firstLetter].push(cur);
+        console.log(cur, "this is testing");
+    } else{
+        acc[firstLetter] = [cur];
+    }
+    return acc;
+}, {});
+
+console.log(nameGroup);
+
 
 
 
