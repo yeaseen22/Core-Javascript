@@ -256,7 +256,25 @@ const nameGroup = names.reduce((acc, cur) =>{
     return acc;
 }, {});
 
-console.log(nameGroup);
+// console.log(nameGroup);
+
+Object.keys(namesGrouped).forEach((groupKey) => {
+    console.log('-----------', groupKey, '-----------');
+    namesGrouped[groupKey].forEach((name) => console.log(name));
+    console.log();
+});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

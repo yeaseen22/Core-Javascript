@@ -6,8 +6,8 @@
  */
 
 
-function sqr(n){
-    return n*n;
+function sqr(n) {
+    return n * n;
 }
 // console.log(sqr(2));
 
@@ -32,8 +32,8 @@ function printPoint(pointObj) {
 
 // First Class Function
 
-function add(a,b){
-    return a+b;
+function add(a, b) {
+    return a + b;
 }
 
 // 1 A function can be stored in a variable
@@ -41,14 +41,14 @@ var sum = add;
 // console.log(sum(4,5));
 // console.log(typeof sum);
 
- // 2 A function can be stored in Array
+// 2 A function can be stored in Array
 
 var arr = [];
 arr.push(add)
 // console.log(arr);
 // console.log(arr[0](5,6));
 
- // 3 A function can be stored in Object
+// 3 A function can be stored in Object
 
 var obj = {
     sumObj: add
@@ -56,24 +56,24 @@ var obj = {
 // console.log(obj);
 // console.log(obj.sumObj(8,9));
 
- // 4 We can creat function as we nedd
+// 4 We can creat function as we nedd
 
 // setTimeout( function (){
 //     console.log('I have created..');
 // },1000 )
 
- // this are for higher order function
- // 5 We can pass function as a arguments
- // 6 We can return function from another function
+// this are for higher order function
+// 5 We can pass function as a arguments
+// 6 We can return function from another function
 
-function add2(a,b){
-    return a+b;
+function add2(a, b) {
+    return a + b;
 }
 
 
-function manipulate(a,b, higdeOder){
-    var c = a+b;
-    var d = a-b;
+function manipulate(a, b, higdeOder) {
+    var c = a + b;
+    var d = a - b;
 
     // function multiply(){
     //     var m = higdeOder(a,b);
@@ -81,11 +81,11 @@ function manipulate(a,b, higdeOder){
     // }
     // return multiply;
 
-    return function (){
-        var m = higdeOder(a,b);
-        return c*d*m;
+    return function () {
+        var m = higdeOder(a, b);
+        return c * d * m;
     }
-    
+
 }
 // var multiply2 = manipulate(3,4,add2);
 // console.log(multiply2());
@@ -93,10 +93,10 @@ function manipulate(a,b, higdeOder){
 
 
 // clouser
-function a(){
+function a() {
     var x = 5;
 
-    return function() {
+    return function () {
         console.log(x);
         // return x;
     }
@@ -109,16 +109,16 @@ function a(){
 
 // callback
 
-function sample(a,b, cb) {
+function sample(a, b, cb) {
     var c = a + b;
     var d = a - b;
 
-    var result = cb(c,d);
+    var result = cb(c, d);
     return result;
 }
 
 
-var result1 = sample(3,4, function (First, Second){
+var result1 = sample(3, 4, function (First, Second) {
     return First + Second;
 })
 
@@ -127,8 +127,8 @@ var result1 = sample(3,4, function (First, Second){
 
 
 // return function from another function
-function greet(msg){
-    function greeting(name){
+function greet(msg) {
+    function greeting(name) {
         return msg + ', ' + name;
     }
 
@@ -145,10 +145,10 @@ var msgRetu = greet('Hello')('Shegufa Tarajum');
 
 // Currying in javascript
 
-function currying(a){
-    return function (b){
-        return function (c){
-            return a+b+c;
+function currying(a) {
+    return function (b) {
+        return function (c) {
+            return a + b + c;
         }
     }
 }
@@ -158,17 +158,46 @@ var sum = currying(10)(15)(5);
 
 
 // function composition
-function print(inp){
+function print(inp) {
     console.log(inp);
 }
 
-function multiplyByFive(n){
+function multiplyByFive(n) {
     return n * 5;
 }
 
-function add(a,b){
+function add(a, b) {
     return a + b;
 }
 
-print( multiplyByFive(add(3,5)) )
+print(multiplyByFive(add(3, 5)))
+
+
+
+
+// functions are object
+
+function test() {
+    console.log('somethings');
+}
+
+
+var Rect = new Function('width', 'height', `this.width = width;
+this.height = height;
+
+    this.draw = function () {
+        console.log('I am draw method');
+        console.log(this.printDrawFunction);
+        console.log(this);
+    },
+
+    this.printDrawFunction = function () {
+        console.log('My Width is ', this.width);
+        console.log('My Height is ', this.height);
+    }`
+)
+
+
+
+
 

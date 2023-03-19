@@ -102,4 +102,24 @@ function myNew(constructor){
 }
 
 var rect4 = myNew(Rectangle, 60, 70);
-rect4.draw();
+// rect4.draw();
+
+
+var Rect = new Function('width', 'height', `this.width = width;
+    this.height = height;
+
+    this.draw = function () {
+        console.log('I am draw method');
+        console.log(this.width);
+        console.log(this);
+    },
+
+    this.printDrawFunction = function () {
+        console.log('My Width is ', this.width);
+        console.log('My Height is ', this.height);
+    }`
+)
+
+var rect5 = new Rect(3,4);
+console.log(rect5);
+
