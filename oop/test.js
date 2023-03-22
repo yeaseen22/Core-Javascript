@@ -205,12 +205,41 @@ rect7.position = {
     y: 2
 }
 
-console.log( rect7.position);
+// console.log( rect7.position);
 
 
+function Person (name) {
+    this.name = name;
+}
+
+var p1 = new Person('Hm Nayem');
+// console.log(p1);
 
 
+var Person2 = {
+    name: 'Hm Nayem'
+}
+
+// for(var i in Person2){
+//     console.log(i);
+// }
 
 
+// console.log(Object.keys(Person2));
+
+// var descriptor = Object.getOwnPropertyDescriptor(Person2, 'name')
+// console.log(descriptor);
+
+// let baseObj = Object.getPrototypeOf(Person2);
+// let descriptor = Object.getOwnPropertyDescriptor(baseObj, 'toString');
+// console.log(descriptor);
+
+
+Object.defineProperty(Person2, 'name',{
+    enumerable: false,
+    writable: false,
+    configurable: false,
+    value: 'Hasan Mahmud Nayem'
+})
 
 
