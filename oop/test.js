@@ -243,3 +243,38 @@ Object.defineProperty(Person2, 'name',{
 })
 
 
+function square(width){
+    this.width = width;
+
+    this.getwidth = function(){
+        console.log('The width is ' + this.width);
+        // this.draw();
+    }
+}
+
+
+square.prototype = {
+    draw: this.draw = function(){
+        this.getwidth();
+        console.log('Draw');
+    },
+
+    toString: function(){
+        return 'My Width is = ', this.width;
+    }
+}
+
+
+var sqr1 = new square(10);
+var sqr2 = new square(10);
+
+// console.log(sqr1.hasOwnProperty('width'));
+
+// console.log(Object.keys(sqr1));
+// console.log(Object.values(sqr1));
+
+for(var i  in sqr1){
+    console.log(i);
+}
+
+
