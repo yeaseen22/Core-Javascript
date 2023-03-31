@@ -53,7 +53,56 @@ function greet(name='Hm Nayem', msg='hello'){
     console.log(`${msg}!  ${name}`);
 }
 
-greet()
+// greet()
+
+
+// Custom Iteratable Object
+
+let objCustoItarable = {
+    start: 1,
+    end: 10,
+    [Symbol.iterator]: function (){
+        let currentValue = this.start;
+        const self = this;
+        return {
+            next() {
+                return {
+                    done: currentValue > self.end,
+                    value: currentValue > self.end ? undefined : currentValue++
+                }
+            }
+        }
+    }
+}
+
+// for(let v of objCustoItarable){
+//     console.log(v);
+// }
+
+
+let iterate = objCustoItarable[Symbol.iterator]();
+// console.log(iterate.next());
+// console.log(iterate.next());
+// console.log(iterate.next());
+// console.log(iterate.next());
+// console.log(iterate.next());
+
+// some object change in es6
+let a1 = 10, b1 = 20
+let objectIteralES5 = {
+    a1,
+    b1,
+    print(){
+        console.log(this);
+    }
+}
+
+console.log(objectIteralES5);
+
+
+
+
+
 
 
 
