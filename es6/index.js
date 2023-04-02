@@ -97,12 +97,58 @@ let objectIteralES5 = {
     }
 }
 
-console.log(objectIteralES5);
+// console.log(objectIteralES5);
+
+
+let objeOfArr = {
+    a:10,
+    b: 20
+}
+// object to arr
+// console.log(Object.entries(objeOfArr));
+
+// arr to object
+let arrayToObj = [
+    ['a', 10],
+    ['b', 20]
+];
+
+// console.log(Object.fromEntries(arrayToObj));
+
+// symbol
+let s1 = Symbol();
+let s2 = Symbol('test')
+
+console.log(s1);
+console.log(s2);
+console.log(s1 === s2);
+// ename system
+let toss = {
+    HEAD: Symbol("HEAD"),
+    TELL: Symbol("TELL")
+}
+
+function createIterator(collection){
+    let i = 0
+    return {
+        next() {
+            return {
+                done : i >= collection.length,
+                value: collection[i++]
+            }
+        }
+    }
+}
 
 
 
 
+// let iterate1 = createIterator(arr)
+let iterate1 = arr[Symbol.iterator]()
+console.log(iterate1.next());
 
+let str = 'text';
+let iterateText = str[Symbol.iterator]();
 
-
+console.log(iterateText.next()); 
 

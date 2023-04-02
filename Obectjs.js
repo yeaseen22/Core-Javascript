@@ -1,3 +1,11 @@
+let obje = {
+    x: 10,
+    y: 20,
+    z: 30
+}
+console.log('x' in obje);
+
+
 // how we can create an object
 // let user = {}  // object literal
 // let users = new Object();
@@ -290,6 +298,27 @@ squre.prototype = {
 };
 console.log(sqr1.draw())
 console.log(sqr2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
