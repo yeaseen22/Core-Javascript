@@ -150,5 +150,15 @@ console.log(iterate1.next());
 let str = 'text';
 let iterateText = str[Symbol.iterator]();
 
-console.log(iterateText.next()); 
+// console.log(iterateText.next()); 
+
+
+
+
+
+
+
+
+
+
 
