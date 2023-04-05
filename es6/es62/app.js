@@ -1,3 +1,9 @@
+
+
+function isIterable(obj){
+    return typeof obj[Symbol.iterator] === 'function'
+}
+
 const arr = [1,2,3];
 
 for(let i = 0; i < arr.length; i++){
@@ -60,13 +66,13 @@ let objeForOfloop = {
 }
 
 // it not work for object(becase this object is not iterable)
-for(let v of objeForOfloop){
+// for(let v of objeForOfloop){
     // console.log(v);
-}
+// }
 
-for(let i in objeForOfloop){
+// for(let i in objeForOfloop){
     // console.log(i);
-}
+// }
 
 
 // Generators in js
@@ -109,8 +115,67 @@ function* generate2(collection){
     }
 }
 
-let iterate3 = generate(arr)
-console.log(iterate3.next());
+// let iterate3 = generate(arr)
+// console.log(iterate3.next());
+
+// we can store premitive or object types of can stored in set
+// we cannot duplicate data in set data structure
+let set = new Set([1,2,3,4]);
+set.add(4);
+set.add(5);
+// console.log(set);
+// console.log(set.has((5)));
+// console.log(set.toJSON());
+// console.log(set.keys());
+// console.log(set.values());
+
+let keyIterate = set.keys();
+let valuesIterate = set.values();
+// console.log(keyIterate.next());
+
+
+set.clear()
+// console.log(set);
+
+// console.log(isIterable(set));
+
+for(let v of set){
+    // console.log(v);
+}
+
+// console.log(set.entries());
+
+let map = new Map([
+    ['a', 10],
+    ['b', 20],
+    ['c', 30]
+]);
+
+map.set('d', 40);
+map.set({name: 'Hm Nayem'},45)
+map.delete('c');
+
+// console.log(map);
+// console.log(map.get('c'));
+// console.log(map.values());
+// console.log(map.keys);
+// console.log(map.entries());
+
+
+// for(let [k, v] of map){
+//     console.log(v, k);
+// }
+
+map.forEach((v, k) => {
+    console.log(k, v);
+})
+
+
+
+
+
+
+
 
 
 
