@@ -170,7 +170,7 @@ function add(a, b) {
     return a + b;
 }
 
-print(multiplyByFive(add(3, 5)))
+// print(multiplyByFive(add(3, 5)))
 
 
 
@@ -196,6 +196,75 @@ this.height = height;
         console.log('My Height is ', this.height);
     }`
 )
+
+
+// function testFunction() {
+//     console.log('I am a test function ');
+// }
+
+// const fn = testFunction;
+// console.log(fn.toString());
+// fn();
+
+// const ar = [fn, testFunction];
+// const o = {
+//     fn: testFunction
+// }
+
+
+// let construct a function
+const fn2 = new Function(
+    'str',
+    `let obj = {};
+    for (let s of str) {
+        if (s !== ' ') {
+            obj[s] = s;
+        }
+    }    
+    
+    return obj;`
+);
+
+// function strToObj(str) {
+//     `let obj = {}
+//     for (let s of str) {
+//         if (s !== ' ') {
+//             obj[s] = s
+//         }
+//     }
+
+//     return obj`
+// }
+
+
+// console.log(fn2('Hm Nayem'));
+
+
+const fData = {
+    params: ['a', 'b'],
+    body: ['const r = a+b', 'return r'],
+};
+
+const fBody = fData.body.reduce((acc, cur) => {
+    acc += cur + ';';
+    return acc;
+}, '');
+
+
+console.log(fBody);
+
+const tf = new Function(...fData.params, fBody);
+console.log(tf(100,200));
+
+
+
+
+
+
+
+
+
+
 
 
 

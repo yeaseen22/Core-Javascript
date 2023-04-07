@@ -167,13 +167,25 @@ map.delete('c');
 // }
 
 map.forEach((v, k) => {
-    console.log(k, v);
+    // console.log(k, v);
 })
 
 
+let a = {a:10}, b = {b:20}
+// let setTest = new Set([a,b]);
+
+// a = null; // it cannot be null in this way
+// console.log(setTest);
+
+let weakSet = new WeakSet([a,b]);
+// a = null;
+// console.log(weakSet.has(a));
 
 
-
+let weakMap = new WeakMap([[a, 34], [b, 20]]);
+a = null;
+console.log(weakMap.get(a));
+console.log(weakMap.has(a));
 
 
 
