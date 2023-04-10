@@ -1,21 +1,23 @@
 
 
-function isIterable(obj){
+// 'use strict'
+
+function isIterable(obj) {
     return typeof obj[Symbol.iterator] === 'function'
 }
 
-const arr = [1,2,3];
+const arr = [1, 2, 3];
 
-for(let i = 0; i < arr.length; i++){
+for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
 }
 
 // create iterato with es6 
 
-function createIterator(collection){
+function createIterator(collection) {
     let i = 0;
     return {
-        next(){
+        next() {
             return {
                 done: i >= collection.length,
                 value: collection[i++]
@@ -61,17 +63,17 @@ function createIterator(collection){
 // }
 
 let objeForOfloop = {
-    a:10,
-    b:20
+    a: 10,
+    b: 20
 }
 
 // it not work for object(becase this object is not iterable)
 // for(let v of objeForOfloop){
-    // console.log(v);
+// console.log(v);
 // }
 
 // for(let i in objeForOfloop){
-    // console.log(i);
+// console.log(i);
 // }
 
 
@@ -95,13 +97,13 @@ let objCustoItarable = {
     // }
 
     // implement generator
-//     [Symbol.iterator]: function* () {
-//         let currentValue = this.start;
-//         while(currentValue <= this.end){
-//             yield currentValue++;
-//         }
-//     }
- }
+    //     [Symbol.iterator]: function* () {
+    //         let currentValue = this.start;
+    //         while(currentValue <= this.end){
+    //             yield currentValue++;
+    //         }
+    //     }
+}
 
 // function* generate(){
 //     yield 1
@@ -109,8 +111,8 @@ let objCustoItarable = {
 //     yield 3
 // }
 
-function* generate2(collection){
-    for(let i = 0; i < collection.length; i++){
+function* generate2(collection) {
+    for (let i = 0; i < collection.length; i++) {
         yield collection[i];
     }
 }
@@ -120,7 +122,7 @@ function* generate2(collection){
 
 // we can store premitive or object types of can stored in set
 // we cannot duplicate data in set data structure
-let set = new Set([1,2,3,4]);
+let set = new Set([1, 2, 3, 4]);
 set.add(4);
 set.add(5);
 // console.log(set);
@@ -139,7 +141,7 @@ set.clear()
 
 // console.log(isIterable(set));
 
-for(let v of set){
+for (let v of set) {
     // console.log(v);
 }
 
@@ -152,7 +154,7 @@ let map = new Map([
 ]);
 
 map.set('d', 40);
-map.set({name: 'Hm Nayem'},45)
+map.set({ name: 'Hm Nayem' }, 45)
 map.delete('c');
 
 // console.log(map);
@@ -171,21 +173,139 @@ map.forEach((v, k) => {
 })
 
 
-let a = {a:10}, b = {b:20}
+let a = { a: 10 }, b = { b: 20 }
 // let setTest = new Set([a,b]);
 
 // a = null; // it cannot be null in this way
 // console.log(setTest);
 
-let weakSet = new WeakSet([a,b]);
+let weakSet = new WeakSet([a, b]);
 // a = null;
 // console.log(weakSet.has(a));
 
 
 let weakMap = new WeakMap([[a, 34], [b, 20]]);
 a = null;
-console.log(weakMap.get(a));
-console.log(weakMap.has(a));
+// console.log(weakMap.get(a));
+// console.log(weakMap.has(a));
+
+
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+        this.another = function () {
+            console.log('Inside the main class body');
+        }
+    }
+
+    name = 'Hm Nayem';
+    test2 = function () {
+        console.log('Inside the main class body2');
+    }
+
+    draw() {
+        console.log('Drawing..');
+    }
+}
+
+// let newReac1 = new Rectangle(34,55);
+
+class Person {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    print() {
+        console.log(this.name, this.email);
+    }
+
+    test() {
+        console.log(this);
+    }
+
+    static create(str) {
+        let person = JSON.parse(str)
+        return new Person(person.name, person.email)
+    }
+}
+
+// JSON
+let str = '{"name": "Hm Nayem", "email": "hasa.m.nayem@mgmail.com"}'
+let p1 = Person.create(str);
+console.log(p1);
+console.log(p1 instanceof Person);
+let testforclass = p1.test;
+// testforclass()
+
+
+// function Shape(){
+//     this.draw = function () {
+//         console.log(this);
+//     }
+// }
+
+// let shape1 = new Shape();
+// let anotherShapeDraw = shape1.draw;
+// anotherShapeDraw(); //return window object, but "use strict" make it undefined
+
+// es6 private
+// const _radius = Symbol();
+// const _name = Symbol();
+// const _draw = Symbol();
+// class Circle {
+//     constructor(radius, name){
+//         this[_radius] = radius;
+//         this[_name] = name;
+//     }
+
+//     [_draw] () {
+//         console.log('Drawing..');
+//     }
+// }
+
+// let c1 = new Circle(2, 'Guest');
+// console.log(c1)
+
+
+
+
+const _radius = new WeakSet();
+const _name = new WeakSet();
+const _resize = new WeakMap();
+_radius.set(10)
+
+
+class Circle {
+    constructor(radius, name) {
+        this.size = 100;
+        _radius.set(this, radius)
+        _name.set(this, name)
+        _resize.set(this, () => {
+            console.log(size);
+        })
+    }
+
+    draw() {
+        console.log('Drawing..');
+        console.log(_radius.get(this), _name.get(this));
+        _resize.get(this)();
+    }
+}
+
+let c1 = new Circle(2, 'Guest');
+console.log(c1.draw())
+
+
+
+
+
+
+
+
+
+
 
 
 
