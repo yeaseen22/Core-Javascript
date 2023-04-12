@@ -250,6 +250,39 @@ let testforclass = p1.test;
 // let anotherShapeDraw = shape1.draw;
 // anotherShapeDraw(); //return window object, but "use strict" make it undefined
 
+// noraml private properties
+class Circle {
+    constructor(radius, name) {
+      // Private property
+      let _radius = radius; // using let or const for private variables
+      let _name = name; // using let or const for private variables
+  
+      // Private method
+      let _resize = () => {
+        console.log('Resizing...');
+        console.log(`New radius: ${_radius}`);
+      };
+  
+      // Public method
+      this.draw = () => {
+        console.log(`Drawing... Name: ${_name}`);
+        _resize(); // invoking private method
+      };
+    }
+  
+    // Public method
+    getName() {
+      return this._name; // accessing private property
+    }
+  }
+  
+//   let c1ForBasic = new Circle(2, 'Guest');
+//   c1.draw(); // Drawing... Name: Guest, Resizing... New radius: 2
+//   console.log(c1ForBasic._radius); // undefined (private property cannot be accessed directly)
+//   console.log(c1ForBasic._name); // undefined (private property cannot be accessed directly)
+//   console.log(c1ForBasic.getName()); // Guest (using public method to access private property)
+  
+
 // es6 private
 // const _radius = Symbol();
 // const _name = Symbol();
@@ -271,38 +304,88 @@ let testforclass = p1.test;
 
 
 
-const _radius = new WeakSet();
-const _name = new WeakSet();
-const _resize = new WeakMap();
-_radius.set(10)
+// const _radius = new WeakSet();
+// const _name = new WeakSet();
+// const _resize = new WeakMap();
+// // _radius.set(10)
 
 
-class Circle {
-    constructor(radius, name) {
-        this.size = 100;
-        _radius.set(this, radius)
-        _name.set(this, name)
-        _resize.set(this, () => {
-            console.log(size);
-        })
-    }
+// class Circle {
+//     constructor(radius, name) {
+//         // this.size = 100;
+//         // _radius.Set(this, radius)
+//         // _name.set(this, name)
+//         // _resize.set(this, () => {
+//             // console.log(size);
+//         // })
+//     }
 
-    draw() {
-        console.log('Drawing..');
-        console.log(_radius.get(this), _name.get(this));
-        _resize.get(this)();
-    }
-}
+//     draw() {
+//         console.log('Drawing..');
+//         console.log(_radius.get(this), _name.get(this));
+//         _resize.get(this)();
+//     }
+// }
 
-let c1 = new Circle(2, 'Guest');
-console.log(c1.draw())
+// let c1 = new Circle(2, 'Guest');
+// console.log(c1.draw())
+
+// et c1 = new Circle(2, 'Guest');
+// //   class Circle {
+//     constructor(radius, name) {
+//       const _radius = new WeakSet(); // define private field using WeakSet
+//       const _name = new WeakSet(); // define private field using WeakSet
+//       const _resize = new WeakMap(); // define private field using WeakMap
+  
+//       this.size = 100;
+//       _radius.set(this, radius); // set private field value
+//       _name.set(this, name); // set private field value
+//       _resize.set(this, () => {
+//         console.log(this.size); // set private field value
+//       });
+//     }
+
+//     get radius(){
+//         return _radius.get(this)
+//     }
+  
+//     draw() {
+//       const _radius = new WeakSet(); // define private field using WeakSet
+//       const _name = new WeakSet(); // define private field using WeakSet
+//       const _resize = new WeakMap(); // define private field using WeakMap
+  
+//       console.log('Drawing..');
+//       console.log(_radius.get(this), _name.get(this)); // access private field values
+//       _resize.get(this)(); // access private field function
+//     }
+//   }
+  
+//   lc1.draw(); // invoke draw() method
 
 
 
+  
+//   let c1 = new Circle2(2, 'Hello', 22);
+//   console.log(c1.radius); // using getter
+//   c1.radius = 3; // using setter
+//   console.log(c1.radius); // using getter
+  
+//   let descriptor = Object.getOwnPropertyDescriptor(c1, 'radius');
+//   console.log(descriptor); // get descriptor using Object.getOwnPropertyDescriptor()
+// c1.print()
 
+// import all things
+import * as funcFunction from './fun'
+// import a class
+import rectangleForInheritance from "./InheritancReta";
 
+console.log(funcFunction.add(2,3));
 
+// let r = new rectangleForInheritance(4, 3, 'dd');
+// console.log(r);
 
+// import specific function
+import {add, div} from './fun';
 
 
 
