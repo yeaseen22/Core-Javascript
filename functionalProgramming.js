@@ -251,14 +251,24 @@ const fBody = fData.body.reduce((acc, cur) => {
 }, '');
 
 
-console.log(fBody);
+// console.log(fBody);
 
 const tf = new Function(...fData.params, fBody);
-console.log(tf(100,200));
+// console.log(tf(100,200));
 
 
 
 
+let number = [1,2,3,4];
+
+function sumFunc(acc, cur, index){
+    console.log(`Index ${index} - Acc ${acc} - ${cur}`);
+    console.log(acc+cur);
+    return acc;
+}
+
+const sumForSumFunc = number.reduce(sumFunc);
+console.log(sum); 
 
 
 

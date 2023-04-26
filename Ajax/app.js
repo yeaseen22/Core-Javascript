@@ -20,9 +20,9 @@ xhr.send()
 // function getRequest(url, callback){
 
 //     const xht = new XMLHttpRequest();
-//     xht.open('get', url);
+//     xhr.open('get', url);
 
-//     hr.onreadystatechange = function(e){
+//     xhr.onreadystatechange = function(e){
 //         if(xhr.readyState === 4) {
 //             if(xhr.status === 200){
 //                 let response = JSON.parse(xhr.response)

@@ -27,26 +27,64 @@
 
 
 
-function getIphone(isPassed){
-    let iphonePromise = new Promise((resolve, reject) =>{
+function getIphone(isPassed) {
+    let iphonePromise = new Promise((resolve, reject) => {
         setTimeout(() => {
-            if(isPassed){
+            if (isPassed) {
                 resolve('I have got my I phone')
-            } else{ reject(new Error('I am failed'))}
+            } else { reject(new Error('I am failed')) }
         }, 2000)
     })
 
     return iphonePromise
 }
-getIphone(true)
-    .then((res) => {
-        console.log(res);
-    })
-    .catch((e) =>{
-        console.log(e.message);
-    })
+// getIphone(true)
+//     .then((res) => {
+//         console.log(res);
+//     })
+//     .catch((e) =>{
+//         console.log(e.message);
+//     })
 
 
+
+const BASE_URL = 'https://jsonplaceholder.typicode.com';
+
+// fetch(`${BASE_URL}/users/1`)
+//     .then((res)=>res.json())
+//     .then((data)=> Promise.resolve('something'))
+//     .then((str) => console.log(str))
+//     .catch((e)=>{console.log(e);})
+
+
+
+function getRequest(url) {
+
+    return new Promise((resolve, reject) => {
+
+
+        const xht = new XMLHttpRequest();
+        xhr.open('get', url);
+
+        xhr.onreadystatechange = function (e) {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    let response = JSON.parse(xhr.response)
+                } else {
+                    reject(new Error('Error Occured'))
+                }
+            }
+        }
+
+        xhr.open()
+    })
+}
+
+// let res = getRequest(`${BASE_URL}/users/1`)
+// console.log(res);
+getRequest(`${BASE_URL}/users/1`)
+    .then((data)=> console.log(data))
+    .catch((e)=>console.log(e))
 
 
 
