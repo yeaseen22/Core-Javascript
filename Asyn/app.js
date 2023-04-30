@@ -51,11 +51,39 @@ const orderAndWaitDelivery = () => {
 
 // orderAndWaitDelivery();
 
+// async await function
+async function test(){
+    return 'test';
+}
+
+// console.log(test());
 
 
 
+let asyncPromise = Promise.resolve('I am a promise')
+
+async function myAsyncFunc() {
+    // asyncPromise.then((v) => console.log(v))
+    let v = await asyncPromise
+
+}
 
 
+async function fetchData(){
+    try {
+        let res = await fetch('https://jsonplaceholder.typicode.com/users')
+
+        let data = await res.json()
+
+        let names = data.map(item => item.name)
+        console.log(names);
+
+    } catch(e){
+        console.log(e.message);
+    }
+}
+
+fetchData()
 
 
 

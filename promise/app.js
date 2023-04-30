@@ -52,7 +52,7 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
 // fetch(`${BASE_URL}/users/1`)
 //     .then((res)=>res.json())
-//     .then((data)=> Promise.resolve('something'))
+//     .then((data)=> Promise.resolve(data))
 //     .then((str) => console.log(str))
 //     .catch((e)=>{console.log(e);})
 
@@ -63,28 +63,31 @@ function getRequest(url) {
     return new Promise((resolve, reject) => {
 
 
-        const xht = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
         xhr.open('get', url);
 
         xhr.onreadystatechange = function (e) {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     let response = JSON.parse(xhr.response)
+                    resolve(response)
                 } else {
                     reject(new Error('Error Occured'))
                 }
             }
         }
 
-        xhr.open()
-    })
+        xhr.send()
+    });
 }
 
 // let res = getRequest(`${BASE_URL}/users/1`)
 // console.log(res);
-getRequest(`${BASE_URL}/users/1`)
-    .then((data)=> console.log(data))
-    .catch((e)=>console.log(e))
+// getRequest(`${BASE_URL}/users/1`)
+//     .then((data)=> console.log(data))
+//     .catch((e)=>console.log(e.message))
+
+
 
 
 
