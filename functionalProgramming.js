@@ -267,16 +267,63 @@ function sumFunc(acc, cur, index){
     return acc;
 }
 
-const sumForSumFunc = number.reduce(sumFunc);
-console.log(sum); 
+// const sumForSumFunc = number.reduce(sumFunc);
+// console.log(sum); 
+
+/** Higher Order Function
+ * function can be passed as an argument
+ * function can be return from another function
+ */
 
 
+/** Hidden Concepts
+ * - Scope
+ * - Clouser
+ * - Execution Context
+ * - Hoisting
+ */
 
+ // make sandwiches using higher order function
+function makeSandwiches(getFillings){
+    const bread = "sourdough";
+    const cheese = 'cheder';
+    const fillings = getFillings();
+    const sandwiches = `${bread}, ${cheese}, ${fillings}`;
+    console.log(`Here's your delicious ${sandwiches} sandwich!`);
+}
 
+function getHam(){
+    return 'Ham';
+}
 
+function getTurkey(){
+    return "Turkey";
+}
 
+function veggies(){
+    return "lettuce, tomato, cucumber";
+}
 
+// makeSandwiches(getHam)
 
+const numberForHigheOrdFun = [1,2,3,4,5];
 
+const doubleNumbers = numberForHigheOrdFun.map((num) => num * 2);
+console.log(doubleNumbers);
+
+const fileteredNumber = numberForHigheOrdFun.filter((num) => num > 3)
+console.log(fileteredNumber);
+
+function mapFunction(numberForHigheOrdFun, transformFunction){
+    const transformed = [];
+    for(let i = 0; i < numberForHigheOrdFun.length; i++) {
+        transformed.push(transformFunction(numberForHigheOrdFun[i]))
+    }
+    
+    return transformed;
+}
+
+const doubleNumbers2 = mapFunction(numberForHigheOrdFun, (number) => number * 2)
+console.log(doubleNumbers2);
 
 
