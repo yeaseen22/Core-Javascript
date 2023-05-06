@@ -309,10 +309,10 @@ function veggies(){
 const numberForHigheOrdFun = [1,2,3,4,5];
 
 const doubleNumbers = numberForHigheOrdFun.map((num) => num * 2);
-console.log(doubleNumbers);
+// console.log(doubleNumbers);
 
 const fileteredNumber = numberForHigheOrdFun.filter((num) => num > 3)
-console.log(fileteredNumber);
+// console.log(fileteredNumber);
 
 function mapFunction(numberForHigheOrdFun, transformFunction){
     const transformed = [];
@@ -324,6 +324,6 @@ function mapFunction(numberForHigheOrdFun, transformFunction){
 }
 
 const doubleNumbers2 = mapFunction(numberForHigheOrdFun, (number) => number * 2)
-console.log(doubleNumbers2);
+// console.log(doubleNumbers2);
 
 
