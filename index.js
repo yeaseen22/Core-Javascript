@@ -36,3 +36,14 @@ if(true){
 
 const myHeading = document.querySelector('h1');
 myHeading.textContent = 'Hello World';
+
+
+// statement vs expression
+
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+/*
+the above code is statement
+*/
