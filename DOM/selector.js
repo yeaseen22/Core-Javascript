@@ -28,19 +28,34 @@ let listItemOne2 = document.querySelector('[name="list-item-one"]')
 
 
 let listForDom1 = document.getElementById('list')
-console.log(listForDom1);
+// console.log(listForDom1);
 
 let parentOfList = listForDom1.parentElement;
-console.log(parentOfList);
+// console.log(parentOfList);
 
 let childrenForList = listForDom1.children;
-console.log(childrenForList);
+// console.log(childrenForList);
 
 console.log(listForDom1.previousSibling);
-console.log(listForDom1.previousElementSibling);
+// console.log(listForDom1.previousElementSibling);
 
 console.log(listForDom1.firstElementChild);
-console.log(listForDom1.lastElementChild);
+// console.log(listForDom1.lastElementChild);
 
+
+
+// loop throw html collection
+let listItem = document.getElementsByTagName('li');
+// console.log(listItem);
+
+// let listItems = Array.from(listItem)
+// let listItems = Array.prototype.slice.apply(listItem)
+let listItems = [...listItem]
+
+// it's directly not work we want to convert it to array
+listItems.forEach((li, index) =>{
+    let text = li.innerHTML;
+    li.innerHTML = `${index + 1} ${text}`
+})
 
 

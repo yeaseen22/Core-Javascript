@@ -327,3 +327,13 @@ const doubleNumbers2 = mapFunction(numberForHigheOrdFun, (number) => number * 2)
 // console.log(doubleNumbers2);
 
 
+
+
+
+
+
+
+
+
+
+
