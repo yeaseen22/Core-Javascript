@@ -15,6 +15,38 @@ const myArray = myString.split(", ")
 console.log(myArray);
 
 const upperCaseString = myString.toUpperCase();
-console.log(upperCaseString);
+// console.log(upperCaseString);
 
-console.log(isNaN(str));
+// console.log(isNaN(str));
+
+// scope
+{
+    var a = 5;
+}
+
+// console.log(a);
+
+{
+//    let forlet = 5;
+}
+// console.log(forlet);
+
+function test(){
+    var a1 = "hello";
+    let b1 = "bye"
+
+    if(true){
+        let a1 = 'HI'
+        // var b1 = 'good bye' //this call illigal shadowing
+        console.log(a1);
+        console.log(b);
+    }
+}
+// test();
+
+// var vs let vs const
+// Declaration
+
+
+
+

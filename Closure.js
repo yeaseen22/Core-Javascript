@@ -91,7 +91,7 @@ function async() {
   console.dir(async);
 }
 
-async();
+// async();
 a = 30;
 
 // with api link fake api
@@ -103,3 +103,29 @@ function apiFunction(url) {
 }
 
 apiFunction("https://jsonplaceholder.typicode.com/todos/1");
+
+
+
+// A clouser is a that referencess variables in the outer scope from it inner scope
+// clouser in js
+// lexical scope
+
+var username = 'Hello Clouser';
+
+function local() {
+console.log(username);
+}
+
+function subscribe(){
+  var name2 = 'Hello';
+
+  function display() {
+    console.log(name2)
+  }
+  display()
+}
+subscribe();
+
+
+
+
