@@ -54,11 +54,3 @@ listItems.forEach((li, index) => {
   let text = li.innerHTML;
   li.innerHTML = `${index + 1} ${text}`;
 });
-
-function createElement(tagName, innerHTML, clasName) {
-  let tage = document.createElement(tagName);
-  tage.innerHTML = innerHTML;
-  tage.clasName = clasName || "";
-
-  return tage;
-}

@@ -16,3 +16,9 @@ function createElement(tagName, innerHTML, clasName) {
 
   return tage;
 }
+
+function append(parent, children) {
+  children.forEach((child) => {
+    parent.appendChild(child);
+  });
+}
