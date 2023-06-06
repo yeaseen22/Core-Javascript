@@ -82,7 +82,49 @@ const user6 = {
   },
 };
 
+function getNameOfThis() {
+  return function () {
+    console.log(user6.name, "own function");
+  };
+}
+
+// getNameOfThis()();
+
 // setTimeout(user6.logMessae, 1000); // for workable this code
 setTimeout(function () {
-  user6.logMessae();
+  // user6.logMessae();
 }, 1000);
+
+var length = 4;
+
+function callback() {
+  console.log(this.length);
+}
+// callback();
+
+const object = {
+  length: 5,
+  method(fn) {
+    fn();
+  },
+};
+
+// object.method(callback);
+// console.log(callback);
+
+function Person(name) {
+  this.name = name;
+}
+
+const Jhon = new Person("John");
+// console.log(Jhon.name);
+
+function PersonAgain() {
+  console.log("Hello", this.name);
+}
+
+const Person1 = { name: "John" };
+const Person2 = { name: "Jane" };
+
+PersonAgain.apply(Person1);
+PersonAgain.call(Person2);

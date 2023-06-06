@@ -22,3 +22,5 @@ function append(parent, children) {
     parent.appendChild(child);
   });
 }
+
+list.insertAdjacentElement("after", div);
