@@ -133,3 +133,37 @@ let count = 0;
   }
   console.log(count);
 })();
+
+function createBase(num) {
+  return function (innerNum) {
+    return innerNum + num;
+  };
+}
+
+// var addSix = createBase(6);
+// addSix(10);
+
+function find(index) {
+  let a = [];
+  for (let i = 0; i < 1000000; i++) {
+    a[i] = i * i;
+  }
+  return function () {
+    console.log(a[index]);
+  };
+}
+
+find("5")();
+
+function outer() {
+  var x = 10;
+  function inner() {
+    console.log(x);
+  }
+  x = 20;
+
+  return inner;
+}
+
+let innerFunc = outer();
+innerFunc(); // ans 20;
