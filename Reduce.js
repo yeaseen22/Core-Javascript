@@ -36,3 +36,15 @@ function sumFunc(acc, curr, index, arr) {
 const sum = arr.reduce(sumFunc, 10);
 console.log(sum);
 // console.log()
+
+
+
+
+
+
+
+
+
+
+
+
