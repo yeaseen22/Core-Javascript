@@ -1,4 +1,4 @@
-let arr = [1,2,3,4,5];
+let arr = [1, 2, 3, 4, 5];
 
 // function someFuncton (accumulator, current) {
 //     return accumulator + current;
@@ -7,37 +7,32 @@ let arr = [1,2,3,4,5];
 // const sum  = arr.reduce(someFuncton)
 // console.log(sum)
 
-const avg = arr.reduce( (a, b, index, arr) => {
-    a += b;
-    if(index === arr.length - 1){
-     return a / arr.length;
-    }
-    return a;
-})
+// function reduce(accumulator, current) {
+//   return accumulator + current;
+// }
+
+const sumForReduce = arr.reduce(reduce);
+console.log(sumForReduce);
+
+const avg = arr.reduce((a, b, index, arr) => {
+  a += b;
+  if (index === arr.length - 1) {
+    return a / arr.length;
+  }
+  return a;
+});
 
 // console.log(avg)
 
-const name = ['Yeaseen Arafat', 'Afsan Mim', 'Lavoni', 'Fahim', 'Nahid'];
+const name = ["Yeaseen Arafat", "Afsan Mim", "Lavoni", "Fahim", "Nahid"];
 
-const votes = [
-    'java',
-    'phython',
-    'javascript',
-    'Go lang',
-    'php'
-];
+const votes = ["java", "phython", "javascript", "Go lang", "php"];
 
-
-
-
-function sumFunc (acc, curr, index, arr) {
-    console.log(`Index ${index} - Acc ${acc} - Cur ${curr}`);
-    console.log(index)
-    return acc + curr;
+function sumFunc(acc, curr, index, arr) {
+  console.log(`Index ${index} - Acc ${acc} - Cur ${curr}`);
+  console.log(index);
+  return acc + curr;
 }
-const sum = arr.reduce(sumFunc, 10)
+const sum = arr.reduce(sumFunc, 10);
 console.log(sum);
 // console.log()
-
-
-
