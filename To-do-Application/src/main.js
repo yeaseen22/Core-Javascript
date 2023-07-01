@@ -1,44 +1,40 @@
-import TaskManager from "./taskManager";
+import TaskManager from "./taskManager.js";
 
 const taskManager = new TaskManager();
-const taskInput = document.getElementById();
+const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 
-// render Task
 function renderTask(task) {
   const li = document.createElement("li");
-  li.innerHTML = `<input type="checkbox" ${task.completed ? "checked" : ""} />
+  li.innerHTML = `
+    <input type="checkbox" ${task.completed ? "checked" : ""} />
     <span>${task.description}</span>
-    <button data-id="${task.id}">Delete</button>`;
-
+    <button data-id="${task.id}">Delete</button>
+  `;
   taskList.appendChild(li);
 }
 
-// create task
-function createList() {
+function clearTaskList() {
   taskList.innerHTML = "";
 }
 
-// add task
 function addTask() {
-  const description = (taskInput = taskInput.value.trim());
+  const description = taskInput.value.trim();
   if (description) {
     taskManager.addTask(description);
     clearTaskList();
-    taskManager.getTask().forEach(renderTask);
+    taskManager.getTasks().forEach(renderTask);
     taskInput.value = "";
   }
 }
 
-// delete Task
 function deleteTask(id) {
-  taskManager.getTask(id);
+  taskManager.deleteTask(id);
   clearTaskList();
-  taskManager.getTask.forEach(renderTask);
+  taskManager.getTasks().forEach(renderTask);
 }
 
-// toggleTask
 function toggleTask(event) {
   const checkbox = event.target;
   const id = parseInt(
@@ -47,14 +43,14 @@ function toggleTask(event) {
   taskManager.toggleTask(id);
 }
 
-addTaskBtn.addEventListners("click", addTask);
-addTask.addEventListners("click", (event) => {
+addTaskBtn.addEventListener("click", addTask);
+taskList.addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON") {
-    const id = parseInt(event.target.tagName.dataset.id);
+    const id = parseInt(event.target.dataset.id);
     deleteTask(id);
   } else if (
     event.target.tagName === "INPUT" &&
-    event.target.tagName === "checkbox"
+    event.target.type === "checkbox"
   ) {
     toggleTask(event);
   }
