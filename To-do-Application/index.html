@@ -1,18 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Todo Application</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .todo-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .todo-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .todo-item input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      .todo-item label {
+        flex-grow: 1;
+      }
+
+      .todo-input {
+        display: flex;
+        margin-bottom: 10px;
+      }
+
+      .todo-input input[type="text"] {
+        flex-grow: 1;
+        padding: 5px;
+        margin-right: 10px;
+      }
+
+      .todo-input button {
+        padding: 5px 10px;
+      }
+    </style>
   </head>
   <body>
-    <h1>To Do List</h1>
-    <input type="text" id="TaskInput" placeholder="Enter a task" />
-    <button id="addTaskBtn">Add Task</button>
-    <ul id="taskList"></ul>
+    <h1>Todo Application</h1>
 
-    <script src="./src/main.js"></script>
-    <!-- <script src="./src/taskManager.js"></script> -->
+    <div class="todo-input">
+      <input type="text" id="todo-input" placeholder="Enter a todo" />
+      <button id="add-todo">Add</button>
+    </div>
+
+    <ul class="todo-list" id="todo-list">
+      <!-- Todo items will be dynamically added here -->
+    </ul>
+
+    <script>
+      // JavaScript code for adding and removing todo items
+      document
+        .getElementById("add-todo")
+        .addEventListener("click", function () {
+          var todoInput = document.getElementById("todo-input");
+          var todoText = todoInput.value.trim();
+
+          if (todoText !== "") {
+            var todoItem = document.createElement("li");
+            todoItem.className = "todo-item";
+            todoItem.innerHTML = `
+          <input type="checkbox">
+          <label>${todoText}</label>
+          <button class="delete-todo">Delete</button>
+        `;
+
+            var deleteButton = todoItem.querySelector(".delete-todo");
+            deleteButton.addEventListener("click", function () {
+              todoItem.remove();
+            });
+
+            document.getElementById("todo-list").appendChild(todoItem);
+            todoInput.value = "";
+          }
+        });
+    </script>
   </body>
 </html>
