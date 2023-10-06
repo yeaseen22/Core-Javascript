@@ -47,4 +47,4 @@ const flatedArray2 = nestedArray.reduce((acc, cur) => {
   return acc.concat(cur);
 }, []);
 
-console.log(flatedArray2);
+// console.log(flatedArray2);

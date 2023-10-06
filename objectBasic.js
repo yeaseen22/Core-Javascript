@@ -251,3 +251,82 @@ const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 let user = {};
 user["likes birds"] = true;
 console.log(user["likes birds"]);
+
+//multiword without (sting multi name)
+let key = "likes bird2";
+user[key] = "Hello key";
+// console.log(user[key]);
+
+let key2 = "apple 2";
+
+const user2 = {
+  [key2]: 5,
+};
+// console.log(user2.apple);
+
+const products = {
+  product1: {
+    name: "Smartphone",
+    price: 599,
+    description: "A high-quality smartphone.",
+    seller: "Seller1",
+  },
+  product2: {
+    name: "Laptop",
+    price: 999,
+    description: "A powerful laptop for work and gaming.",
+    seller: "Seller2",
+  },
+};
+
+const users = {
+  user1: {
+    username: "user1",
+    email: "user1@example.com",
+    password: "hashed_password",
+  },
+  user2: {
+    username: "user2",
+    email: "user2@example.com",
+    password: "hashed_password",
+  },
+  // ... More users
+};
+
+// property existence test
+function hasDiscout(product) {
+  return "discount" in product;
+}
+
+function displayProductProperties(product) {
+  for (let key in product) {
+    console.log(`${key} : ${product[key]}`);
+  }
+}
+function authenticateUser(username, password) {
+  const user = users[username];
+  if (user && user.password === password) {
+    return true;
+  }
+  return false;
+}
+
+// const isAuthenticated = authenticateUser("user1", "hashed_password");
+
+const userProfile = {};
+
+// userProfile["private"] = {
+//   likes: "friend",
+//   posts: "public",
+// };
+
+// const likePrivacy = userProfile["privacy"]["likes"];
+// console.log(`Likes Prvacy Setting, ${likePrivacy}`);
+
+const obje = {};
+if (typeof obje === "object") {
+  console.log("it an object");
+}
+
+const person = { firstName: "John", lastName: "Doe" };
+const { firstName, lastName } = person;
