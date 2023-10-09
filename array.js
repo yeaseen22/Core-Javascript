@@ -67,7 +67,6 @@ var number2 = ["fdff1", "fdfffffe2", "ffeyfefhu3", "fsdfet4", "fdffg5"];
 // console.log(string)
 // console.log(number)
 
-
 // const Arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // const n = Arr[3];
 // const m = Arr[2];
@@ -83,7 +82,6 @@ var number2 = ["fdff1", "fdfffffe2", "ffeyfefhu3", "fsdfet4", "fdffg5"];
 // console.log(sum)
 // find the Avg
 // console.log(sum/Arr.length)
-
 
 // find the largest
 // let largestNumber = Arr[0];
@@ -105,7 +103,7 @@ const array = [32, 523, 5632, 920, 6000];
 // for(let i = 1; i < array.length; i++) {
 // 	if(array[i] > largestNum) {
 //     secondLargestNum = largestNum;
-//     largestNum = array[i];  
+//     largestNum = array[i];
 //     }
 //   // else if (array[i] !== largestNum && array[i] > secondLargestNum) {
 //   // secondLargestNum = array[i];
@@ -116,18 +114,18 @@ const array = [32, 523, 5632, 920, 6000];
 
 // smallest and second smallest element in array
 // var arr = [ 6, 3, 5, 2, 9 ];
-// 		var smallest = arr[0]; 
-// 		var secondSmallest = arr[1]; 
+// 		var smallest = arr[0];
+// 		var secondSmallest = arr[1];
 
-// 		for(var i = 0; i < arr.length; i++) { 
-// 			if(arr[i] < smallest) {  
-// 				smallest = arr[i];  
-// 			} 
+// 		for(var i = 0; i < arr.length; i++) {
+// 			if(arr[i] < smallest) {
+// 				smallest = arr[i];
+// 			}
 
-// 			if(arr[i] > smallest && arr[i] < secondSmallest ) { 
-// 				secondSmallest = arr[i]; 
-// 			} 
-// 		} 
+// 			if(arr[i] > smallest && arr[i] < secondSmallest ) {
+// 				secondSmallest = arr[i];
+// 			}
+// 		}
 
 // 		// console.log(secondSmallest);
 //     // console.log(smallest);
@@ -136,12 +134,12 @@ const array = [32, 523, 5632, 920, 6000];
 // // use unshift to insert at the end
 const arrp1 = [1, 3, 4, 5];
 arrp1[arrp1.length] = 88;
-arrp1.push(22, 44)
+arrp1.push(22, 44);
 // console.log(arrp1)
 
 const arrp2 = [90, 101];
-// arrp1.push(...arrp2) // or 
-Array.prototype.push.apply(arrp1, arrp2)
+// arrp1.push(...arrp2) // or
+Array.prototype.push.apply(arrp1, arrp2);
 // // console.log(arrp1)
 
 // // use unshift to insert at the beginning
@@ -149,17 +147,16 @@ const arrul = [5, 7, 8, 9, 10];
 arrul.unshift(4);
 const arrul2 = [1, 2, 3];
 arrul.unshift(...arrul2);
-Array.prototype.unshift.apply(arrul, arrul2)
+Array.prototype.unshift.apply(arrul, arrul2);
 // // console.log(arrul)
 
 // use Splice to insert at the given index
-const arrS1 = [1, 2, 3, 5, 9]
-const arrs2 = [10, 11, 12, 14]
-arrS1.splice(3, 0, 4)
-arrS1.splice(5, 0, 6, 7, 8)
-arrS1.splice(9, 0, ...arrs2)
+const arrS1 = [1, 2, 3, 5, 9];
+const arrs2 = [10, 11, 12, 14];
+arrS1.splice(3, 0, 4);
+arrS1.splice(5, 0, 6, 7, 8);
+arrS1.splice(9, 0, ...arrs2);
 // console.log(arrS1)
-
 
 // // updating existing elemnt in array
 const numbers = [1, 2, 4, 6, 7];
@@ -171,25 +168,24 @@ numbers[5] = 6;
 
 // array of object
 const student = [
-    { id: 1, names: 'nayem1' },
-    { id: 2, names: 'nayem2' },
-    { id: 3, names: 'nayem3' },
-    { id: 4, names: 'nayem4' },
-    { id: 5, names: 'nayem5' },
+  { id: 1, names: "nayem1" },
+  { id: 2, names: "nayem2" },
+  { id: 3, names: "nayem3" },
+  { id: 4, names: "nayem4" },
+  { id: 5, names: "nayem5" },
 ];
 
 const givenID = 3;
-const updatedName = 'Shayaike Salvi'
+const updatedName = "Shayaike Salvi";
 
 for (let i = 0; i < student.length; i++) {
-    if (givenID === student[i].id) {
-        student[i].names = updatedName;
-        break;
-    }
+  if (givenID === student[i].id) {
+    student[i].names = updatedName;
+    break;
+  }
 }
 
 // console.log(student)
-
 
 // multi Dimensional
 const arrays = [];
@@ -197,37 +193,31 @@ arrays[2] = 90;
 // console.log(arrays[2]);
 
 const names = [
-    'Hm Nayem',
-    'Shegufa Taranjum',
-    'Shayaike Salvy',
-    'Badhon Khan',
-    'Sakib Al Hasan',
-    'Mehedi Hasan',
-    'Asif Mahir'
-]
+  "Hm Nayem",
+  "Shegufa Taranjum",
+  "Shayaike Salvy",
+  "Badhon Khan",
+  "Sakib Al Hasan",
+  "Mehedi Hasan",
+  "Asif Mahir",
+];
 
-// add element dynamicaly 
-names[names.length] = 'Yeasin Arafat';
+// add element dynamicaly
+names[names.length] = "Yeasin Arafat";
 // console.log(names.length);
-
-
 
 // constructor pattern
 const a1 = new Array(1, 2, 3, 4, 5);
 // console.log(a1, a1.length);
-
-
 
 // // Factory pattern
 const b1 = Array();
 // console.log(a1.__proto__.constructor);
 // console.log(b1.__proto__.constructor)
 
-
 const arrSplice = [1, 2, 3, 4, 5];
 arrSplice.splice(5, 0, ...arrs2);
 // console.log(arrSplice)
-
 
 const Arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Remove First Element
@@ -239,9 +229,9 @@ const Arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Arr.splice(2,3)
 const toBeDeleted = 5;
 for (let i = 0; i < Arr.length; i++) {
-    if (Arr[i] == toBeDeleted) {
-        Arr.splice(i, 1);
-    }
+  if (Arr[i] == toBeDeleted) {
+    Arr.splice(i, 1);
+  }
 }
 
 // delete Arr[i];
@@ -268,7 +258,6 @@ let yy = xx;
 xx.length = [];
 //  console.log(xx, yy);
 
-
 //  Alternative way of reset whole array with while loop
 
 while (Arr.length) Arr.pop();
@@ -294,16 +283,14 @@ const citrus = FRUITS.slice(0, 3);
 // console.log(citrus);
 // console.log(newSliced)
 
-
-
 // array clone
 const cloned = sliceArr.slice();
 // console.log(cloned);
 
 // Array like Object to Array
 function toArray() {
-    // console.log(Array.prototype.slice.call(arguments));
-    return Array.prototype.slice.call(arguments)
+  // console.log(Array.prototype.slice.call(arguments));
+  return Array.prototype.slice.call(arguments);
 }
 
 // const argAraay = toArray(4, 3, 7, 8, 9, 'test');
@@ -311,40 +298,42 @@ const argAraay = toArray(4, 3, 7, 8);
 // console.log(argAraay);
 
 function age(a, b) {
-    console.log(arguments);
+  console.log(arguments);
 }
 // age(23,4);
-
 
 // mutlidimensional array
 
 const muti3d = [
-    [
-        [0.1, 0.1],
-        [0.2, 0.2]
-    ],
-    [
-        [0, 0],
-        [0, 0]
-    ],
+  [
+    [0.1, 0.1],
+    [0.2, 0.2],
+  ],
+  [
+    [0, 0],
+    [0, 0],
+  ],
 ];
 
-console.log(muti3d[0][1]);
+// console.log(muti3d[0][1]);
 
-const arr2 = Array.from({ length: 3 }, () => Array.from({ length: 4 }, () => 0));
+const arr2 = Array.from({ length: 3 }, () =>
+  Array.from({ length: 4 }, () => 0)
+);
 
 arr2[1][2] = 5;
 
 for (let i = 0; i < arr2.length; i++) {
-    for (let j = 0; j < arr2[i].length; j++) {
-        //   console.log(arr2[i][j]);
-    }
+  for (let j = 0; j < arr2[i].length; j++) {
+    //   console.log(arr2[i][j]);
+  }
 }
 
 // console.log(arr2);
 
-
-const arr3D = Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => 0)));
+const arr3D = Array.from({ length: 3 }, () =>
+  Array.from({ length: 3 }, () => Array.from({ length: 3 }, () => 0))
+);
 
 // set a value in the array
 arr3D[1][1][1] = 5;
@@ -352,10 +341,14 @@ arr3D[1][1][1] = 5;
 
 // loop through the array and print each value
 for (let i = 0; i < arr3D.length; i++) {
-    for (let j = 0; j < arr3D[i].length; j++) {
-        for (let k = 0; k < arr3D[i][j].length; k++) {
-            //   console.log(arr3D[i][j][k]);
-        }
+  for (let j = 0; j < arr3D[i].length; j++) {
+    for (let k = 0; k < arr3D[i][j].length; k++) {
+      //   console.log(arr3D[i][j][k]);
     }
+  }
 }
 
+const testArr = ["Banana", "Orange", "Apple", "Mango"];
+console.log(testArr.toString());
+console.log(testArr);
+console.log(typeof testArr);
