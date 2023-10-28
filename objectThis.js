@@ -112,22 +112,22 @@ const object = {
 // object.method(callback);
 // console.log(callback);
 
-function Person(name) {
-  this.name = name;
-}
+// function Person(name) {
+//   this.name = name;
+// }
 
-const Jhon = new Person("John");
-// console.log(Jhon.name);
+// const Jhon = new Person("John");
+// // console.log(Jhon.name);
 
-function PersonAgain() {
-  console.log("Hello", this.name);
-}
+// function PersonAgain() {
+//   console.log("Hello", this.name);
+// }
 
-const Person1 = { name: "John" };
-const Person2 = { name: "Jane" };
+// const Person1 = { name: "John" };
+// const Person2 = { name: "Jane" };
 
-PersonAgain.apply(Person1);
-PersonAgain.call(Person2);
+// PersonAgain.apply(Person1);
+// PersonAgain.call(Person2);
 
 `
 What is this?
@@ -144,3 +144,28 @@ In a function, in strict mode, this is undefined.
 In an event, this refers to the element that received the event.
 Methods like call(), apply(), and bind() can refer this to any object.
 `;
+
+let userForThis = { name: "jhon" };
+let adminForThis = { name: "admin" };
+
+function sayHi() {
+  console.log(this.name);
+}
+
+userForThis.f = sayHi;
+adminForThis.f = sayHi;
+
+// console.log(userForThis.f);
+// userForThis.f();
+// adminForThis["f"]();
+
+let userForArrow = {
+  firstName: "Iliyana",
+  sayHi() {
+    let arrow = () => {
+      console.log(this.firstName);
+    };
+    arrow();
+  },
+};
+userForArrow.sayHi();

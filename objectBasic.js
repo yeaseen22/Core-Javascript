@@ -312,8 +312,13 @@ function authenticateUser(username, password) {
 }
 
 // const isAuthenticated = authenticateUser("user1", "hashed_password");
+let userinfo;
+const userProfile = {
+  [`${userinfo}`]: "friend",
+  post: "public",
+};
 
-const userProfile = {};
+console.log(userProfile[userinfo]);
 
 // userProfile["private"] = {
 //   likes: "friend",
@@ -323,10 +328,86 @@ const userProfile = {};
 // const likePrivacy = userProfile["privacy"]["likes"];
 // console.log(`Likes Prvacy Setting, ${likePrivacy}`);
 
-const obje = {};
-if (typeof obje === "object") {
-  console.log("it an object");
+// const obje = {};
+// if (typeof obje === "object") {
+//   console.log("it an object");
+// }
+
+// const person = { firstName: "John", lastName: "Doe" };
+// const { firstName, lastName } = person;
+
+// Create an object called student with properties for "name," "age," "grade," and "subjects." The "subjects" property should be an array of subjects the student is studying. Use a for...in loop to iterate over the properties of the student object and display their values.
+
+const personForTest = {
+  name: "Yaseen",
+  age: 32,
+  grade: "#",
+  subject: [
+    {
+      physics: 33,
+      chemistry: 33,
+      math: 44,
+    },
+  ],
+};
+
+// for (let key in personForTest.subject) {
+//   console.log(key);
+// }
+// console.log(personForTest.subject[0].chemistry);
+// let keyes = "age";
+// console.log(keyes in personForTest);
+// console.log(personForTest);
+for (let chcekc in personForTest) {
+  // console.log(chcekc);
 }
 
-const person = { firstName: "John", lastName: "Doe" };
-const { firstName, lastName } = person;
+// in you want see 1st 49 run then add + sing to each code
+let codes = {
+  49: "Germany",
+  41: "Switzerland",
+  44: "Great Britain",
+  // ..,
+  1: "USA",
+};
+
+for (let code in codes) {
+  // console.log(code);
+}
+
+// Cloing and meerging
+
+let userFor = {
+  name: "armaan",
+  age: 22,
+  size: {
+    height: 182,
+    width: 82,
+  },
+};
+
+// let clone = {};
+
+// shallow copy
+let clone = structuredClone(user);
+// for (let keys in userFor) {
+// deep copy
+//   // also do this with object.assign
+//   clone[keys] = user[keys];
+// }
+// console.log((clone.name = "hello"));
+
+// object InterLinked
+
+function marry(man, woman) {
+  woman.husband = man;
+  man.wife = woman;
+
+  return {
+    father: man,
+    mother: woman,
+  };
+}
+
+// let family = marry({ name: "Asad" }, { name: "Mossamad Akhi" });
+// console.log(family);
