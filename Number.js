@@ -26,3 +26,5 @@ let xstring = 123;
 // xstring = xstring.toFixed();
 xstring = xstring.toPrecision(3);
 console.log(xstring);
+
+let billion = 1e6;

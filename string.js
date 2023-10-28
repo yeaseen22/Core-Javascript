@@ -37,5 +37,5 @@ let text2 = text.substring(1, 10); // substring start value is 0
 let txt = "hello world";
 console.log(txt.charAt(4));
 
-console.log(typeof NaN);
-console.log(typeof Infinity);
+// console.log(typeof NaN);
+// console.log(typeof Infinity);

@@ -348,7 +348,11 @@ for (let i = 0; i < arr3D.length; i++) {
   }
 }
 
-const testArr = ["Banana", "Orange", "Apple", "Mango"];
-console.log(testArr.toString());
-console.log(testArr);
-console.log(typeof testArr);
+// const testArr = ["Banana", "Orange", "Apple", "Mango"];
+// console.log(testArr.toString());
+// console.log(testArr);
+// console.log(typeof testArr);
+
+const arrForSlice = ["i", "a", "in"];
+
+arrForSlice.splice(1, 1);
