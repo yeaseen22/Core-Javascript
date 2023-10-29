@@ -355,4 +355,42 @@ for (let i = 0; i < arr3D.length; i++) {
 
 const arrForSlice = ["i", "a", "in"];
 
-arrForSlice.splice(1, 1);
+// arrForSlice.splice(1, 1); // splice is mutable method
+// console.log(arrForSlice);
+
+// console.log(arrForSlice.pop()); // pop method is also mutable
+// console.log(arrForSlice);
+
+// console.log(arrForSlice.push("new latter")); // push method is also mutable
+// console.log(arrForSlice);
+
+// console.log(arrForSlice.shift()); // shift is also mutable
+// console.log(arrForSlice);
+
+console.log(arrForSlice.unshift("new element")); // unshift also mutable
+console.log(arrForSlice);
+
+// Methods push and unshift can add multiple elements at once:
+
+/* array internals*/
+// let fruits = [];
+// fruits[99999999] = 5;
+// fruits.age = 23;
+// console.log(fruits);
+
+let fruits = ["Apple", "Orange", "Pear"];
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+
+for (let fruit in fruits) {
+  console.log(fruit);
+}
+
+// multidimentional array
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+console.log(matrix[0]);
