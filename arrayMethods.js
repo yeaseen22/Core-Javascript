@@ -52,5 +52,17 @@ for (let name of arr) {
   console.log(`A Message to ${name}`);
 }
 
-console.log(arrForJoin);
-console.log(arrForSplit);
+// console.log(arrForJoin);
+// console.log(arrForSplit);
+
+const numbers = [34, 55, 23, 1, 66, 43, 2, 4];
+
+function myFunction(value, index, array) {
+  console.log(value);
+  console.log(index);
+  console.log(array);
+  console.log("---------------");
+}
+
+// numbers.forEach(myFunction);
+numbers.map(myFunction);

@@ -135,3 +135,66 @@ console.log(value.output(obj));
 delete obj[Symbol("my private value")];
 
 console.log(obj);
+
+// iterable protocol there is two rule for become a iterable,
+/* 1. that should have [Smbol.iterator]  it have to be a function
+  2. that function have to be return a an iterator
+ */
+let array = [1, 2, 3];
+
+let iterator = array[Symbol.iterator]();
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+
+// iterator protocol
+/**
+ * 1. must js object
+ * 2. it need to implement a next() method
+ * 3. next() must return an object with done: boolean and a value
+ */
+
+console.log("JavaScript"[Symbol.iterator]().next());
+console.log([..."hello"]);
+// console.log([...34]);  // nuumber are not iterable
+
+// our custom iterator(not do this things)
+
+String.prototype[Symbol.iterator] = function () {
+  let count = this.length;
+  return {
+    next() {
+      // return done false/true, and value as object
+      if (count > 0) {
+        count--;
+        return { done: false, value: "JS" };
+      }
+      return { done: true };
+    },
+  };
+};
+// console.log([..."hello"]);
+
+function range2(start, end, step) {
+  let current = start;
+  return {
+    [Symbol.iterator]: function () {
+      return {
+        next() {
+          let result;
+          if (current <= end) {
+            result = { done: false, value: current };
+            current += step;
+            return result;
+          }
+          return {
+            done: true,
+          };
+        },
+      };
+    },
+  };
+}
+
+console.log([...range2(1, 30, 2)]);
