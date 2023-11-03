@@ -411,3 +411,27 @@ function marry(man, woman) {
 
 // let family = marry({ name: "Asad" }, { name: "Mossamad Akhi" });
 // console.log(family);
+
+let userForValue = {
+  name: "Jhon",
+  age: 30,
+};
+
+for (let value of Object.values(userForValue)) {
+  console.log(value);
+}
+
+for (let value of Object.keys(userForValue)) {
+  console.log(value);
+}
+
+let price = {
+  banana: 1,
+  orange: 2,
+  meat: 4,
+};
+
+let doublePrice = Object.fromEntries(
+  Object.entries(price).map((entry) => [entry[0], entry[1] * 2])
+);
+console.log(doublePrice);
