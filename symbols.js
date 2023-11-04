@@ -3,6 +3,19 @@
 string type, or
 symbol type.`;
 
+// a basic iterator uses of is and when need it, it's not actual iterator
+const arr = [1, 2, 3, 4];
+let index = 0;
+function next() {
+  return arr[index++];
+}
+
+console.log(next());
+console.log(next());
+console.log(next());
+console.log(next());
+console.log(next());
+
 let id = Symbol("id");
 // console.dir(id);
 // console.log(id);
@@ -197,4 +210,18 @@ function range2(start, end, step) {
   };
 }
 
-console.log([...range2(1, 30, 2)]);
+// console.log([...range2(1, 30, 2)]);
+
+const names = "Stack Learner";
+const nameIterator = names[Symbol.iterator]();
+// console.log(nameIterator.next());
+while (true) {
+  const data = nameIterator.next();
+  if (data.done) {
+    break;
+  } else {
+    console.log(data.value);
+  }
+}
+
+// console.log(typeof [Symbol.iterator]);

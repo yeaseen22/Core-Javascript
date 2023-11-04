@@ -146,4 +146,72 @@ const products = [
 const totalPrice = calculateTotalPrice(...products);
 
 // Display the total price
-console.log(`Total Price: $${totalPrice}`);
+// console.log(`Total Price: $${totalPrice}`);
+
+let [firstN, lastN] = "Jhon Smit".split(" ");
+console.log(firstN, lastN);
+
+// assign from right side
+let [a, b, c] = "abc";
+let [one, two, three] = new Set([1, 2, 3]);
+
+// assign from left side
+let userForLeft = {};
+[userForLeft.name, userForLeft.surname] = "Jhon Smit".split(" ");
+
+// with loop
+for (let [key, value] of Object.entries(userForLeft)) {
+  console.log(`${key}: ${value}`);
+}
+
+// Swap Variable trick
+
+let guest = "Jane";
+let admin = "pete";
+
+// swap the places
+[guest, admin] = [admin, guest];
+
+// use rest also
+let [name1, name2, ...rest] = [
+  "Julius",
+  "Caesar",
+  "Consul",
+  "of the Roman Republic",
+];
+
+// set default also
+let [name = "Guest", surname = "Anonymous"] = ["Julius"];
+
+let option = {
+  title: "Menu",
+  width: 100,
+  height: 200,
+};
+
+// let { title, width, height } = option;
+
+({ title, width, height } = { title: "menu", widht: 200, height: 100 });
+
+let options = {
+  size: {
+    widht: 100,
+    height: 200,
+  },
+  items: ["Cake", "Donut"],
+  extra: true,
+};
+
+let {
+  size: { widht, height },
+  items: [item1, item2],
+  title = "menu",
+} = options;
+
+
+
+
+
+
+
+
