@@ -36,3 +36,12 @@ console.log("First Name", fName);
 
 let arr = [function () {}];
 console.log(arr[0]);
+
+let sum = new Function("a", "b", "return a+ b");
+
+// nested setTimeout
+let i = 1;
+setTimeout(function run() {
+  func(i++);
+  setTimeout(run, 100);
+}, 100);

@@ -42,7 +42,11 @@ function compareNumber(a, b) {
 
 let arrForSort = [1, 2, 5, 4, 15];
 
-console.log(arrForSort.sort(compareNumber));
+arrForJoin.sort(function (a, b) {
+  return a - b;
+});
+console.log(arrForJoin);
+// console.log(arrForSort.sort(compareNumber));
 
 let names = "Bilbo, Gandalf, Nazgul";
 let namesArr = ['"Bilbo', "Gandalf", "Nazgul"];
@@ -66,3 +70,11 @@ function myFunction(value, index, array) {
 
 // numbers.forEach(myFunction);
 numbers.map(myFunction);
+
+// array contatenation
+const myGirl = ["Shegufa", "Tarangum", "Befari"];
+const myBoy = ["Hm", "Nayem", "Befari"];
+const myChildren = myGirl.concat(myBoy);
+console.log(myChildren);
+
+// sorting
