@@ -45,3 +45,14 @@ setTimeout(function run() {
   func(i++);
   setTimeout(run, 100);
 }, 100);
+
+// a common interview problem
+for (let i = 1; i <= 5; i++) {
+  (function (j) {
+    setTimeout(function () {
+      console.log(j);
+    }, 1000);
+  })(i);
+}
+
+// solve this problem via IFF

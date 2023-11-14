@@ -435,3 +435,51 @@ let doublePrice = Object.fromEntries(
   Object.entries(price).map((entry) => [entry[0], entry[1] * 2])
 );
 console.log(doublePrice);
+
+let user = {
+  firstName: "Yeaseen Arafat",
+  sayHi() {
+    console.log(`Hello ${this.firstName}`);
+  },
+};
+
+setTimeout(function () {
+  user.sayHi();
+}, 1000);
+
+let userWithBind = {
+  firstName: "John",
+};
+
+function func() {
+  console.log(this.firstName);
+}
+
+let funcUserBind = func.bind(userWithBind);
+funcUserBind();
+
+function mul(a, b) {
+  return a * b;
+}
+
+let double = mul.bind(null, 2);
+
+double(3);
+
+function greating(obj) {
+  obj.logMessage = function () {
+    console.log(`${this.name} is ${this.age} year old`);
+  };
+}
+
+const tom = {
+  name: "Tom",
+  age: 7,
+};
+
+const jerry = {
+  name: "Jerry",
+  age: 3,
+};
+
+greating(tom);
