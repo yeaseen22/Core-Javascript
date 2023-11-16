@@ -52,3 +52,10 @@ console.log("5" - 2); //3
 console.log("5" * "2"); //10
 
 // automatic string convertion
+
+let aForAut = { name: "Fahad" };
+console.log(aForAut.toString());
+let myVar = [1, 2, 3, 4];
+console.log(myVar.toString());
+let myVarDate = new Date();
+console.log(myVarDate.toString());

@@ -1,3 +1,5 @@
+const { log } = require("console");
+
 let king = "John Doe";
 
 if (true) {
@@ -63,3 +65,20 @@ function subscripe() {
 }
 
 subscripe();
+
+// global scope
+var name1 = "something";
+let name2 = "something";
+
+// autometically global
+myFunction();
+
+function myFunction() {
+  carName = "Volvo"; // js treat as global variable
+}
+
+// function argument variable are also local variable
+function arg(a, b) {
+  console.log(a + b);
+}
+arg(23, 4);
