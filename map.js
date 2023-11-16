@@ -14,6 +14,11 @@ let recipeMap = new Map([
   ["onion", 50],
 ]);
 
+recipeMap.set("apple", 500);
+recipeMap.get("onion");
+recipeMap.size();
+recipeMap.delete["apple"];
+
 for (let vegetable of recipeMap.keys()) {
   console.log(vegetable);
 }
