@@ -394,3 +394,11 @@ let matrix = [
   [7, 8, 9],
 ];
 console.log(matrix[0]);
+
+const numberforMethods = [45, 4, 9, 16, 25];
+
+function myFunction(value, index, arr) {}
+
+numberforMethods.forEach(myFunction);
+numberforMethods.map(myFunction);
+numberforMethods.filter(myFunction);

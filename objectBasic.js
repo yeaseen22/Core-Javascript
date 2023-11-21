@@ -436,7 +436,7 @@ let doublePrice = Object.fromEntries(
 );
 console.log(doublePrice);
 
-let user = {
+let userForTest = {
   firstName: "Yeaseen Arafat",
   sayHi() {
     console.log(`Hello ${this.firstName}`);
@@ -444,7 +444,7 @@ let user = {
 };
 
 setTimeout(function () {
-  user.sayHi();
+  userForTest.sayHi();
 }, 1000);
 
 let userWithBind = {
@@ -482,4 +482,26 @@ const jerry = {
   age: 3,
 };
 
-greating(tom);
+// greating(tom);
+
+console.log(this);
+
+// explicit binding
+const person1 = {
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+
+const person2 = {
+  firstName: "John",
+  lastName: "Doe",
+};
+
+console.log(person1.fullName.call(person2));
+// use property descriptor
+// console.log(Object.getOwnPropertyDescriptor(person2, "firstName"));
+
+let empty = { name: "Hello" };
+Object.defineProperty(empty, "name", { value: "Armaan" });
+console.log(empty.name);

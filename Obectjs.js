@@ -1,10 +1,9 @@
 let obje = {
-    x: 10,
-    y: 20,
-    z: 30
-}
-console.log('x' in obje);
-
+  x: 10,
+  y: 20,
+  z: 30,
+};
+console.log("x" in obje);
 
 // how we can create an object
 // let user = {}  // object literal
@@ -26,18 +25,17 @@ console.log('x' in obje);
 //     name: "John",
 //     age: 30
 //   };
-  
+
 //   let key = prompt("What do you want to know about the user?", "name");
-  
+
 //   // access by variable
 //   console.log( user[key] ); // John (if enter "name")
-
 
 // let user = {
 //     name: "John",
 //     age: 30
 //   };
-  
+
 //   let key = "name";
 //   console.log( user[key])
 
@@ -137,7 +135,6 @@ console.log('x' in obje);
 
 // console.log(user.name); // Pete (bad thing todo)
 
-
 // let user = {
 //   name: "John",
 //   age: 30
@@ -201,15 +198,13 @@ console.log('x' in obje);
 
 // };
 
-
 // let admin = user;
 // user = null; // overwrite to make things obvious
 
 // admin.sayHi(); // TypeError: Cannot read property 'name' of null
 
-
 // let obj1= {
-//   names: 'Armaan' 
+//   names: 'Armaan'
 // }
 // let obj2 = {
 //   names: 'Yeaseen'
@@ -234,7 +229,6 @@ console.log('x' in obje);
 // };
 // person.fullName();
 
-
 // const person = {
 //     firstName: "John",
 //     lastName: "Doe",
@@ -253,13 +247,10 @@ console.log('x' in obje);
 // var se = person.LastName;
 // console.log(typeof se)
 
-
 // do not create like that
 // x = new String();        // Declares x as a String object
 // y = new Number();        // Declares y as a Number object
 // z = new Boolean();       // Declares z as a Boolean objec
-
-
 
 // const person1 = {
 //   firstName: "John",
@@ -273,52 +264,51 @@ console.log('x' in obje);
 // console.log(person1)
 
 // multi level inheritance
-function Person (names) {
-    this.names = names;
+function Person(names) {
+  this.names = names;
 }
-var p1 = new Person('Yeaseen Arafat');
-console.log(p1)
+var p1 = new Person("Yeaseen Arafat");
+// console.log(p1);
 
-// instance vs prototype member 
-function squre (width) {
-    this.width = width;
-
+// instance vs prototype member
+function squre(width) {
+  this.width = width;
 }
 
 var sqr1 = new squre(45);
-var sqr2 = new squre (56);
+var sqr2 = new squre(56);
 
 squre.prototype = {
-    draw:  function () {
-        console.log('Draw')
-    },
-    toString: function(){
-        return 'My Width is = ' + this.width
-    }
+  draw: function () {
+    console.log("Draw");
+  },
+  toString: function () {
+    return "My Width is = " + this.width;
+  },
 };
-console.log(sqr1.draw())
-console.log(sqr2)
+// console.log(sqr1.draw());
+// console.log(sqr2);
 
+// object constructor
+const Shegufa = {
+  firstName: "Shegufa",
+  lastName: "Taranjum",
+  age: 23,
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
 
+// constructor are like that following shape
+function Persons(first, last, age) {
+  //construcrot function
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.fullName = function () {
+    return this.firstName + " " + this.lastName;
+  };
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const Salma = new Persons("salma", "khatun", 35);
+console.log(Salma.fullName());
