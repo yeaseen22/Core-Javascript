@@ -8,4 +8,12 @@ let text = "";
 letters.forEach(function (value) {
   text += value;
 });
-console.log(letters.values());
+// console.log(letters.values());
+
+const sets = new Set();
+console.dir(sets.values());
+
+const myIterator = letters.entries();
+for (myIteratorMap of myIterator) {
+  console.log(myIteratorMap);
+}

@@ -1,3 +1,5 @@
+const { dir } = require("console");
+
 let obje = {
   x: 10,
   y: 20,
@@ -311,4 +313,38 @@ function Persons(first, last, age) {
 }
 
 const Salma = new Persons("salma", "khatun", 35);
-console.log(Salma.fullName());
+// console.log(Salma.fullName());
+
+// prototype in object
+
+Persons.prototype.country = "Bangladesh";
+console.dir(Persons);
+console.log(Salma.country);
+
+// js object iterable
+const nums = [1, 2, 3];
+const numIterator = nums[Symbol.iterator]();
+console.log(numIterator.next());
+
+// make object iterable
+const myNums = {};
+myNums[Symbol.iterator] = function () {
+  let n = 0;
+  let done = false;
+  return {
+    next() {
+      n += 10;
+      if (n == 100) {
+        done = true;
+      }
+      return {
+        value: n,
+        done: done,
+      };
+    },
+  };
+};
+
+for (let num of myNums) {
+  console.log(num);
+}
