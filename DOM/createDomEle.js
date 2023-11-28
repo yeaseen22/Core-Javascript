@@ -27,8 +27,12 @@
 
 console.log(document.getElementById("demo"));
 console.dir(document.getElementById("demo"));
-const p = document.getElementById("demo");
-p.innerHTML = "test 0";
+
+setTimeout(function () {
+  const p = document.querySelector("#demo");
+  p.style.color = "green";
+  p.style.fontSize = "30px";
+}, 2000);
 
 document.querySelector("#demo");
 
