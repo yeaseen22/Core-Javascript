@@ -33,13 +33,13 @@ function sumFunc(acc, curr, index, arr) {
   // console.log(index);
   return acc + curr;
 }
-const sum = arr.reduce(sumFunc, 10);
+// const sum = arr.reduce(sumFunc, 10);
 // console.log(sum);
 // console.log()
 
 const nestedArray = [[1, 2], 3, [4, 5]];
 
-const flatedArray1 = nestedArray.flat();
+// const flatedArray1 = nestedArray.flat();
 // console.log(flatedArray1);
 
 // using reduce implement flate feature
@@ -48,3 +48,22 @@ const flatedArray2 = nestedArray.reduce((acc, cur) => {
 }, []);
 
 // console.log(flatedArray2);
+
+const arr2 = [1, 2, 3, 4, 5];
+
+const arr2Map = arr2.map((x) => [x]);
+console.log(arr2Map);
+
+const flatMap = arr2.flatMap((x) => [x * 2]);
+console.log(flatMap);
+
+const reducedFlatMap = arr2.reduce((acc, cur) => {
+  return acc.concat(cur * 2);
+}, []);
+
+const reducedFlatMap1 = arr2.reduce((acc, cur) => {
+  return acc.concat([cur, cur * 2]);
+}, []);
+
+console.log(reducedFlatMap);
+console.log(reducedFlatMap1);

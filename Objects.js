@@ -318,13 +318,13 @@ const Salma = new Persons("salma", "khatun", 35);
 // prototype in object
 
 Persons.prototype.country = "Bangladesh";
-console.dir(Persons);
-console.log(Salma.country);
+// console.dir(Persons);
+// console.log(Salma.country);
 
 // js object iterable
 const nums = [1, 2, 3];
 const numIterator = nums[Symbol.iterator]();
-console.log(numIterator.next());
+// console.log(numIterator.next());
 
 // make object iterable
 const myNums = {};
@@ -346,5 +346,37 @@ myNums[Symbol.iterator] = function () {
 };
 
 for (let num of myNums) {
-  console.log(num);
+  // console.log(num);
 }
+
+// configure an object with seter and geter
+let user = {
+  name: "John",
+  surname: "Smith",
+
+  get getFullName() {
+    return `${this.name} ${this.surname}`;
+  },
+
+  set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
+  },
+};
+
+user.fullName = "Alice Cooper";
+
+// using compatibility
+function User(name, birthday) {
+  this.name = name;
+  this.birthday = birthday;
+
+  Object.defineProperty(this, "age", {
+    get() {
+      let todayYear = new Date().getFullYear();
+      return todayYear - this.birthday.getFullYear();
+    },
+  });
+}
+
+let john = new User("John", new Date(1992, 6, 1));
+console.log(john);
