@@ -67,3 +67,55 @@ const reducedFlatMap1 = arr2.reduce((acc, cur) => {
 
 console.log(reducedFlatMap);
 console.log(reducedFlatMap1);
+
+const votes1 = [
+  "Java",
+  "Java",
+  "Python",
+  "Java",
+  "JavaScript",
+  "Python",
+  "JavaScript",
+];
+
+const reuslt = votes1.reduce((acc, cur) => {
+  if (acc[cur]) {
+    acc[cur]++;
+  } else {
+    acc[cur] = 1;
+  }
+  return acc;
+}, {});
+
+console.log(reuslt);
+
+// output example
+// const result = {
+//   Java: 3,
+//   Paython: 2,
+//   JavaScript: 2,
+// };
+
+/**
+ * @title: our own reduce
+ */
+
+function myReduce(arr, cb, init) {
+  let acc = init,
+    start = 0;
+  if (!init) {
+    acc = arr[0];
+    start = 1;
+  }
+  for (let i = start; i < arr.length; i++) {
+    acc = cb(acc, arr[i], i, arr);
+  }
+
+  return acc;
+}
+
+console.log(
+  myReduce(arr, (acc, cur) => {
+    return acc + cur;
+  })
+);
