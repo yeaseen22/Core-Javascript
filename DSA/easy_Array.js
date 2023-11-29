@@ -64,3 +64,9 @@ const numbers = [10, 5, 20, 10, 30, 30, 40];
 const thirdLargest = findThirdLargest(numbers);
 
 console.log("Third largest element:", thirdLargest);
+
+function getRendoNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(getRendoNumber(1, 6));
