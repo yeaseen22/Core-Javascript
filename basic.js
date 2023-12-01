@@ -71,4 +71,4 @@ const sum = nums.reduce(
 const afterReduce = sum.nums.map((n) => {
   return n;
 });
-console.log(afterReduce, "hi");
+// console.log(afterReduce, "hi");

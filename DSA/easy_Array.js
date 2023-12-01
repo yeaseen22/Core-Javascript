@@ -70,3 +70,28 @@ function getRendoNumber(min, max) {
 }
 
 console.log(getRendoNumber(1, 6));
+
+// sum of natural number
+function sumOfNaturalNumber(num) {
+  let sum = 0;
+
+  for (let i = 1; i <= num; i++) {
+    sum += i;
+  }
+
+  return sum;
+}
+
+console.log(sumOfNaturalNumber(5));
+
+// sum of digits
+function sumOfDigits(num) {
+  let sum = 0;
+  while (num > 0) {
+    sum += num % 10;
+    num = parseInt(num / 10);
+  }
+
+  return sum;
+}
+console.log(sumOfDigits(1287));
