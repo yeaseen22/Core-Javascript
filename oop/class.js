@@ -43,3 +43,16 @@ class Model extends CarInheritance {
 }
 
 let myCar = new Model("Ford", "Mustang");
+
+// dynamic class
+function makeClass(phrase) {
+  // declare a class and return it
+  return class {
+    sayHi() {
+      alert(phrase);
+    }
+  };
+}
+
+let user = makeClass("Hello");
+new user().sayHi();
