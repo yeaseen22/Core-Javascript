@@ -5,7 +5,7 @@ function loadData() {
   // what todo when response arrives
   xhr.onload = function () {
     const container = document.getElementById("demo");
-    container.innerHTML = xhr.responseText;
+    container.innerHTML = this.responseText;
   };
 
   //   prepare request - - methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
@@ -13,4 +13,7 @@ function loadData() {
 
   //   request send
   xhr.send();
+
+  // we can abort the request
+  // this.abort();
 }
