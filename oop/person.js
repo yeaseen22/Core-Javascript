@@ -21,29 +21,33 @@ class Person {
 // const p1 = new Person("Hm Nayem"); // when call class the it's call his own contructor function by default
 // const p2 = new Person("Shegufa Taranjum");
 
+// private properties with [symbol]
+const _name = Symbol("name");
+const _email = Symbol("email");
+
 class Person1 {
   static ClassName = "Person";
   static PI = 3.1416;
 
   constructor(name, email) {
-    this._name = name;
-    this._email = email;
+    this[_name] = name;
+    this[_email] = email;
   }
 
   get name() {
-    return this._name;
+    return this[_name];
   }
 
   set name(value) {
-    this._name = value;
+    this[_name] = value;
   }
 
   get email() {
-    return this._email;
+    return this[_email];
   }
 
   set email(value) {
-    this._email = value;
+    this[_email] = value;
   }
 
   print() {
@@ -51,7 +55,7 @@ class Person1 {
   }
 
   toString() {
-    return `Name - ${this._name}, Email - ${this._email}`;
+    return `Name - ${this[_name]}, Email - ${this[_email]}`;
   }
 
   static isValid(age) {
