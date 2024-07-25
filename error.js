@@ -8,5 +8,5 @@ try {
 } catch (err) {
   console.log("There is an error ", err);
 } finally {
-  console.log("Congratulations you code completedly run");
+  console.log("Congratulations your code completedly run");
 }

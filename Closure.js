@@ -9,7 +9,7 @@ var num1 = 2;
 // // console.log(sum());
 // console.dir(sum)
 
-// different case
+//#region different case
 var sum = function () {
   var num2 = 39;
   return function () {
@@ -20,7 +20,8 @@ var sum = function () {
 var myFunc = sum();
 console.dir(myFunc);
 
-// more use case for understand closure
+
+//#region more use case for understand closure
 
 function banckAccount(initialBalance) {
   var balance = initialBalance;
@@ -32,7 +33,7 @@ function banckAccount(initialBalance) {
 var account = banckAccount(100000);
 console.dir(account);
 
-// more on closure
+//#region more on closure
 
 var sum = function () {
   var num2 = 3;
@@ -46,7 +47,7 @@ var sum = function () {
 myFunc = sum();
 console.dir(myFunc);
 
-// using let keyword
+//#region using let keyword
 let nums = 2;
 let nums2 = 4;
 
@@ -56,7 +57,7 @@ sum = function () {
 
 console.dir(sum);
 
-// more flexibility with closure
+//#region more flexibility with closure
 
 function stopWathc() {
   var startTime = Date.now();
@@ -78,7 +79,7 @@ timer;
 console.dir(timer);
 timer = null;
 
-// Asynchronous way of refresenting closure
+//#region Asynchronous way of refresenting closure
 
 var a;
 
@@ -94,7 +95,7 @@ function async() {
 // async();
 a = 30;
 
-// with api link fake api
+//#region with api link fake api
 
 function apiFunction(url) {
   fetch(url).then((res) => {

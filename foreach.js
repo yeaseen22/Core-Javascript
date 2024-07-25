@@ -6,7 +6,7 @@ let names = [
     'stack solution'
 ];
 
-// Iteration Logic --> Business Logic
+//#region Iteration Logic --> Business Logic
 
 // function resue (arr, logic) {
 //     for(let i = 0; i < arr.length; i++) {
@@ -28,7 +28,7 @@ let names = [
 // resue(['one', 'two', 'three'], logic);
 
 
-// own foreach
+//#region own foreach
 function myForEach (arr, cb) {
     for(let i = 0; i < arr.length; i++) {
         cb(arr[i], i, arr);

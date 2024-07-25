@@ -14,13 +14,13 @@ function manipulate(a, b, func) {
 }
 
 var result = manipulate(3, 4, add);
-console.log(result());
+// console.log(result());
 
 const platform = [
-  { id: 01, name: "code abc", havePlayList: 13 },
-  { id: 02, name: "new abc", havePlayList: 4 },
-  { id: 03, name: "old abc", havePlayList: 33 },
-  { id: 04, name: "future abc", havePlayList: 0 },
+  { id: 1, name: "code abc", havePlayList: 13 },
+  { id: 2, name: "new abc", havePlayList: 4 },
+  { id: 3, name: "old abc", havePlayList: 33 },
+  { id: 4, name: "future abc", havePlayList: 0 },
 ];
 // platform.forEach(function (item, index, arry){
 //     // console.log(item.id);
@@ -49,25 +49,36 @@ function anotherOne() {
 // console.log(hello(anotherOne))
 
 
-// filter 
+//#region filter 
 // const overplayList = platform.filter(function (item) {
 //     return item.havePlayList> 10
 // })
 // console.log(overplayList);
 
-// count all playlist with for loop
+//#region count all playlist with for loop
 // let totalPlayList = 0;
 // for(let i=0; i < platform.length; i++){
 //     totalPlayList += platform[i].havePlayList
+//     // console.log(platform[i].havePlayList)
 // }
 // console.log(totalPlayList);
 
-//count all playlist  with reduce function
-const totalPlayList = platform.reduce((total, currentValue) => {
+//#region count all playlist  with reduce function
+// const totalPlayList = platform.reduce((total, currentValue) => {    
+//     // console.log('current value',currentValue);
+//     // console.log('previous value',total)
+//     return total + currentValue.havePlayList;
     
-    // console.log(currentValue);
-    return total + currentValue.havePlayList;
-    
-}, 0);
+// }, 0);
 // console.log(totalPlayList)
 
+
+//#experiment with map with platform object
+let totalPlayListWithMap = 0;
+const totalPlayListWithMapResult = platform.map((item) => {
+  // console.log('under map',item)
+  console.log(totalPlayListWithMap+=item.id)
+  return totalPlayListWithMap+=item.id;
+})
+console.log('total result  ',totalPlayListWithMapResult)
+console.log('each time',totalPlayListWithMap)

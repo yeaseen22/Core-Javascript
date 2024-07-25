@@ -1,4 +1,4 @@
-// Alert in browser javascript - Does not return anything
+//#region Alert in browser javascript - Does not return anything
  alert("This is a message!");
 
  let names = prompt("What is your name? ", "Guest");

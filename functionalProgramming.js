@@ -30,25 +30,24 @@ function printPoint(pointObj) {
 
 
 
-// First Class Function
-
+//#region First Class Function
 function add(a, b) {
     return a + b;
 }
 
-// 1 A function can be stored in a variable
+//#region 1 A function can be stored in a variable
 var sum = add;
 // console.log(sum(4,5));
 // console.log(typeof sum);
 
-// 2 A function can be stored in Array
+//#region 2 A function can be stored in Array
 
 var arr = [];
 arr.push(add)
 // console.log(arr);
 // console.log(arr[0](5,6));
 
-// 3 A function can be stored in Object
+//#region 3 A function can be stored in Object
 
 var obj = {
     sumObj: add
@@ -56,7 +55,7 @@ var obj = {
 // console.log(obj);
 // console.log(obj.sumObj(8,9));
 
-// 4 We can creat function as we nedd
+//#region 4 We can creat function as we nedd
 
 // setTimeout( function (){
 //     console.log('I have created..');
@@ -143,7 +142,7 @@ var msgRetu = greet('Hello')('Shegufa Tarajum');
 
 
 
-// Currying in javascript
+//#region Currying in javascript
 
 function currying(a) {
     return function (b) {
@@ -157,7 +156,7 @@ var sum = currying(10)(15)(5);
 // console.log(sum);
 
 
-// function composition
+//#region function composition
 function print(inp) {
     console.log(inp);
 }
@@ -175,7 +174,7 @@ function add(a, b) {
 
 
 
-// functions are object
+//#region functions are object
 
 function test() {
     console.log('somethings');
@@ -212,7 +211,7 @@ this.height = height;
 // }
 
 
-// let construct a function
+//#region let construct a function
 const fn2 = new Function(
     'str',
     `let obj = {};
@@ -270,20 +269,21 @@ function sumFunc(acc, cur, index){
 // const sumForSumFunc = number.reduce(sumFunc);
 // console.log(sum); 
 
-/** Higher Order Function
+//#region Higher Order Function
+/** 
  * function can be passed as an argument
  * function can be return from another function
  */
 
-
-/** Hidden Concepts
+//#region Hidden Concept
+/** 
  * - Scope
  * - Clouser
  * - Execution Context
  * - Hoisting
  */
 
- // make sandwiches using higher order function
+ //#region make sandwiches using higher order function
 function makeSandwiches(getFillings){
     const bread = "sourdough";
     const cheese = 'cheder';

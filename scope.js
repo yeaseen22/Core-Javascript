@@ -29,7 +29,7 @@ function test() {
 }
 // test();
 
-// scope chain
+//#region  scope chain
 var a2 = 11;
 
 function A() {
@@ -66,18 +66,20 @@ function subscripe() {
 
 subscripe();
 
-// global scope
+//#region global scope
 var name1 = "something";
 let name2 = "something";
 
-// autometically global
+//#region autometically global
 myFunction();
+
+
 
 function myFunction() {
   carName = "Volvo"; // js treat as global variable
 }
 
-// function argument variable are also local variable
+//#region function argument variable are also local variable
 function arg(a, b) {
   console.log(a + b);
 }

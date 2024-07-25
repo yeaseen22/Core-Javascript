@@ -1,4 +1,4 @@
-// task function
+//#region task function
 
 const taskManager = [];
 function addTask(taskName = "Untitled Task", dueDate = "No Due Date") {

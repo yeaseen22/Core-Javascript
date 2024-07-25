@@ -72,3 +72,19 @@ class PersonWithClass {
 
 const sakibWithClass = new PersonWithClass("Sakib", 35);
 sakibWithClass.eat();
+
+var f = function Person(){
+
+}
+
+console.dir(f)
+
+
+//#region access prototype chai method
+Object.prototype.armaan = function(){
+  console.log('I am armaan');
+}
+
+var p = {}
+
+p.armaan()

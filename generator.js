@@ -16,7 +16,7 @@ function* range(start = 0, stop = 100, step = 5) {
   }
 }
 
-// generate unique id
+//#region generate unique id
 function* generateId() {
   let index = 1;
   while (true) {

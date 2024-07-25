@@ -18,7 +18,7 @@ function showMessage(from, text = "no text given") {
 
 // showMessage("Ann",);
 
-// javascript reflection
+//#region javascript reflection
 const greeting = new Function(
   "name",
   "email",
@@ -39,14 +39,14 @@ console.log(arr[0]);
 
 let sum = new Function("a", "b", "return a+ b");
 
-// nested setTimeout
+//#region nested setTimeout
 let i = 1;
 setTimeout(function run() {
   func(i++);
   setTimeout(run, 100);
 }, 100);
 
-// a common interview problem
+//#region a common interview problem
 for (let i = 1; i <= 5; i++) {
   (function (j) {
     setTimeout(function () {
@@ -55,4 +55,4 @@ for (let i = 1; i <= 5; i++) {
   })(i);
 }
 
-// solve this problem via IFF
+// solve this problem via IIFE

@@ -1,12 +1,12 @@
-// for(var i = 0; i<=100; i++){
-//     console.log('Yaseen Arafat! ', i );
-// }
+for(var i = 0; i<=100; i++){
+    console.log('Yaseen Arafat! ', i );
+}
 
-// var sum = 0;
-// for (var i = 0; i <= 5; i++) {
-//     sum+=i;
-// }
-// console.log(sum);
+var sum = 0;
+for (var i = 0; i <= 5; i++) {
+    sum+=i;
+}
+console.log(sum);
 
 var isRunning = true;
 // while (isRunning) {

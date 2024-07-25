@@ -54,7 +54,7 @@ console.log(Boolean(-Infinity));
 0
 null
 undefined
-NnN
+NaN
 */
 console.log(Boolean(""));
 console.log(Boolean("fdfjkdjfdjf"));

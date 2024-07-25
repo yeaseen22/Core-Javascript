@@ -1,5 +1,5 @@
-// Array Destructuring
-// Object Destructuring
+// #region Array Destructuring
+//#region Object Destructuring
 
 const classTen = {
   classTeacher: "Mr, Zahid Hasan",
@@ -58,6 +58,7 @@ const getUserInfo = ({ names, email }) => {
 };
 // getUserInfo(user);
 
+// #region Product service function
 const ProductService = (() => {
   const products = [
     { id: 1, name: "iPhone", price: 999 },

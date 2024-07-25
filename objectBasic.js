@@ -16,7 +16,7 @@ const microphone = {
 };
 
 /**
- * there are two different parts of object
+ // #region there are two different parts of object
  * 1. noun/adjective (state/data/property/field)
  * 2. verb / (functionalities => start, stop)
  * */
@@ -57,23 +57,23 @@ const microphone = {
 
 // console.log(Boolean(empty));
 
-// const students = [
-//     {
-//         id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
-//         name: 'Md Al-Amin',
-//         email: 'alamin@test.com',
-//     },
-//     {
-//         id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
-//         name: 'Akib Ahmed',
-//         email: 'akib@test.com',
-//     },
-//     {
-//         id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
-//         name: 'Elias Emon',
-//         email: 'elias@test.com',
-//     },
-// ];
+const students = [
+    {
+        id: '67de71e5-0eac-474f-ab51-850ba9b31ed5',
+        name: 'Md Al-Amin',
+        email: 'alamin@test.com',
+    },
+    {
+        id: 'ebdf6b78-c32b-4b1d-8574-e8c655b05c1e',
+        name: 'Akib Ahmed',
+        email: 'akib@test.com',
+    },
+    {
+        id: 'ee729e84-a84e-4adf-b32c-4647a7114d5b',
+        name: 'Elias Emon',
+        email: 'elias@test.com',
+    },
+];
 
 // // update data
 // const idToUpdate = 'ee729e84-a84e-4adf-b32c-4647a7114d5b';
@@ -119,7 +119,7 @@ const microphone = {
 //   },
 // };
 
-// // adding data
+// //#region adding data
 // const std = {
 //   id: "ebdf6b72-c32b-4b1d-8578-e8c655b05c14",
 //   name: "Feroz Khan",
@@ -188,13 +188,13 @@ const microphone = {
 
 const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 
-// const learReduce = numbers.reduce(  (acc, cur) => {
+// const learnReduce = numbers.reduce(  (acc, cur) => {
 //     acc+= cur.toString();
 //     return acc;
 // }, '');
 // console.log(learReduce);
 
-// const learReduce = numbers.reduce((acc, cur) => {
+// const learnReduce = numbers.reduce((acc, cur) => {
 //   if (cur) {
 //     acc += cur.toString();
 //   }
@@ -246,13 +246,13 @@ const numbers = [1, 2, 3, 4, false, "", NaN, 5, 6];
 //     console.log();
 // });
 
-// object array notation
+//#region object array notation
 
 let user = {};
 user["likes birds"] = true;
 console.log(user["likes birds"]);
 
-//multiword without (sting multi name)
+//#region multiword without (sting multi name)
 let key = "likes bird2";
 user[key] = "Hello key";
 // console.log(user[key]);

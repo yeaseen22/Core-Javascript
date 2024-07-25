@@ -58,9 +58,8 @@ switch (today) {
     break;
 }
 
-
+// #region finding event or odd number using js condition
 var number = 11;
-
 var result = number % 2 === 0 ? "Event" : "Odd";
 console.log(result);
 

@@ -1,3 +1,5 @@
+// #region implementing payment system with callback
+
 const paymentSuccess = true;
 const marks = 70;
 
@@ -36,6 +38,7 @@ function getCertificate() {
 //   progress(getCertificate);
 // });
 
+//#region callback with implementing express js
 function createMiddleware() {
   const middlewares = [];
 
@@ -63,6 +66,7 @@ function createMiddleware() {
   return { use, runMiddlewares };
 }
 
+//#region create Middleware
 const app = createMiddleware();
 
 app.use((req, res, next) => {
@@ -77,6 +81,7 @@ app.use((req, res, next) => {
   next();
 });
 
+//#region running middleware
 app.runMiddlewares({ url: "/home" }, {}, (err) => {
   if (err) {
     console.error(err.message);
