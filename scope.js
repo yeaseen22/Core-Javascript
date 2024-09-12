@@ -64,14 +64,14 @@ function subscripe() {
   displayName();
 }
 
-subscripe();
+// subscripe();
 
 //#region global scope
 var name1 = "something";
 let name2 = "something";
 
 //#region autometically global
-myFunction();
+// myFunction();
 
 
 
@@ -83,4 +83,15 @@ function myFunction() {
 function arg(a, b) {
   console.log(a + b);
 }
-arg(23, 4);
+// arg(23, 4);
+
+
+var a = 20;
+function scopeLet () {
+  console.log('first checking',a);
+  
+  let a = 10;
+  console.log('checking second',a);
+  
+}
+scopeLet()

@@ -65,8 +65,8 @@ const reducedFlatMap1 = arr2.reduce((acc, cur) => {
   return acc.concat([cur, cur * 2]);
 }, []);
 
-console.log(reducedFlatMap);
-console.log(reducedFlatMap1);
+// console.log(reducedFlatMap);
+// console.log(reducedFlatMap1);
 
 const votes1 = [
   "Java",
@@ -143,7 +143,7 @@ const Invoice = products.reduce((acc, cur) => {
   return acc;
 }, {});
 
-console.log(Invoice);
+// console.log(Invoice);
 
 /**
  * 'Js CookeBooke': {price 1400, quantity: 4}

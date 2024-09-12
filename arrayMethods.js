@@ -17,7 +17,7 @@ arr.forEach((item, index, array) => {
   );
 });
 
-console.log(arr);
+// console.log(arr);
 
 let users = [
   { id: 1, name: "Jhon" },
@@ -26,12 +26,20 @@ let users = [
   { id: 4, name: "Doe" },
 ];
 
+const userReduce = users.reduce((acc,cur,index,array) => {
+  
+  console.log('accumulator',acc);
+  console.log('current',cur);
+
+  // return cur;
+},{id:1.1, name: 'default'})
+
 let userArr = users.find((item) => item.id == 1);
 let someUser = users.filter((item) => item.id > 3);
-console.log(users.findIndex((user) => user.name == "Pete"));
-console.log(users.findLastIndex((user) => user.name == "Doe"));
-console.log(someUser);
-console.log(userArr);
+// console.log(users.findIndex((user) => user.name == "Pete"));
+// console.log(users.findLastIndex((user) => user.name == "Doe"));
+// console.log(someUser);
+// console.log(userArr);
 
 function compareNumber(a, b) {
   // if (a > b) return 1;
@@ -42,10 +50,10 @@ function compareNumber(a, b) {
 
 let arrForSort = [1, 2, 5, 4, 15];
 
-arrForJoin.sort(function (a, b) {
-  return a - b;
-});
-console.log(arrForJoin);
+// arrForJoin.sort(function (a, b) {
+//   return a - b;
+// });
+// console.log(arrForJoin);
 // console.log(arrForSort.sort(compareNumber));
 
 let names = "Bilbo, Gandalf, Nazgul";
@@ -53,7 +61,7 @@ let namesArr = ['"Bilbo', "Gandalf", "Nazgul"];
 let arrForSplit = names.split(", ");
 let arrForJoin = namesArr.join(";");
 for (let name of arr) {
-  console.log(`A Message to ${name}`);
+  // console.log(`A Message to ${name}`);
 }
 
 // console.log(arrForJoin);
@@ -62,10 +70,10 @@ for (let name of arr) {
 const numbers = [34, 55, 23, 1, 66, 43, 2, 4];
 
 function myFunction(value, index, array) {
-  console.log(value);
-  console.log(index);
-  console.log(array);
-  console.log("---------------");
+  // console.log(value);
+  // console.log(index);
+  // console.log(array);
+  // console.log("---------------");
 }
 
 // numbers.forEach(myFunction);
@@ -75,6 +83,6 @@ numbers.map(myFunction);
 const myGirl = ["Shegufa", "Tarangum", "Befari"];
 const myBoy = ["Hm", "Nayem", "Befari"];
 const myChildren = myGirl.concat(myBoy);
-console.log(myChildren);
+// console.log(myChildren);
 
 // sorting
