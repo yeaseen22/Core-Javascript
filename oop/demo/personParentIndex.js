@@ -1,4 +1,4 @@
-const Person = require("./person");
+const Person = require("../person");
 const Teacher = require("./Teacher");
 const Student = require("./Student");
 
