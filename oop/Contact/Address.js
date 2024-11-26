@@ -7,7 +7,68 @@ const _postalCode = Symbol('postalCode')
 const _id = Symbol("id")
 
 class Address {
+    constructor({ id, roadNo, city, region, country, postalCode }) {
+        this[_id] = id,
+            this[_roadNo] = roadNo || '',
+            this[_city] = city || '',
+            this[_region] = region || '',
+            this[_country] = country || '',
+            this[_postalCode] = postalCode || ''
+    }
 
+    get id() {
+        return this[_id]
+    }
+
+    get roadNo() {
+        return this[_roadNo]
+    }
+
+    set roadNo(value) {
+        this[_roadNo] = value
+    }
+
+    get city() {
+        return this[_city]
+    }
+
+    set city(value) {
+        this[_city] = value
+    }
+
+    get region() {
+        return this[_region]
+    }
+
+    set region(value) {
+        this[_region] = value
+    }
+
+    get country() {
+        return this[_country]
+    }
+
+    set country(value) {
+        this[_country] = value
+    }
+
+    get postalCode() {
+        return this[_postalCode]
+    }
+
+    set postalCode(value) {
+        this[_postalCode] = value
+    }
+
+    toString() {
+        return `
+        ID: ${this[_id]}
+        RoadNo: ${this[_roadNo]},
+        City: ${this[_city]},
+        Region: ${this[_region]},
+        Country: ${this[_country]},
+        PostalCode: ${this[_postalCode]}`
+    }
 }
 
 module.exports = Address
