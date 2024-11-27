@@ -1,5 +1,5 @@
 const Person = require("./Person");
-const Employee = require("./Employee")
+const Employee = require("./Employe")
 
 const _title = Symbol("Subject");
 const _salary = Symbol("Salary");

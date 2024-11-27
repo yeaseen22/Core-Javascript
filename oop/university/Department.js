@@ -1,4 +1,3 @@
-const { _ } = require("core-js")
 
 const _id = Symbol("id")
 const _name = Symbol("name")
