@@ -15,6 +15,7 @@ class Employee extends UniPerson {
         return this[_employeeId];
     }
 
+    
     set salary(value) {
         this[_salary] = value;
     }
