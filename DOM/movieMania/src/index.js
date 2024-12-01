@@ -77,9 +77,9 @@ function sortByReview(movieReviewData) {
     addMovieReviewData(movieListEl, sortReviewData)
 }
 
-function groupReviewByTitle(movieReviewData){
+function groupReviewByTitle(movieReviewData) {
     const flatMovieData = movieReviewData.flat();
-    const groupedReviews = Object.groupBy(flatMovieData, ({title}) => title);
+    const groupedReviews = Object.groupBy(flatMovieData, ({ title }) => title);
 
     const titleKeys = Reflect.ownKeys(groupedReviews);
 
@@ -90,11 +90,28 @@ function groupReviewByTitle(movieReviewData){
         liEl.classList.add("card", "p-2", "my-2")
 
         const hEl = document.createElement("h2")
-        
+        hEl.classList.add("text-3xl")
+        hEl.innerText = title
+        liEl.appendChild(hEl)
+
+        const reviews = groupedReviews[title]
+        reviews.forEach((revies) => {
+            const pEl = document.createElement("p")
+            pEl.classList.add("mx-2", "mb-2")
+
+            const message = `✅ <strong>${revies.by}</strong> has been <strong>${revies.rating}</strong> rating with a comment, <i>${revies.content}</i>`
+
+            pEl.innerHTML = message;
+            liEl.appendChild(pEl)
+        })
+
+        movieListEl.appendChild(liEl)
+
+
     })
 
     console.log('group review data', movieReviewData);
-    
+
 }
 
 function addMovieReviewData(movieListEl, movieReviewData) {
