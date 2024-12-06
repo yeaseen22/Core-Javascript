@@ -1,19 +1,39 @@
-const randomQuote = [
-    'Quality is not an act, it is a habit',
-    'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.',
-    'Life is 10% what happens to you and 90% how you react to it.',
-    'If you are going through hell, keep going.',
-    'Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.',
-    'With the new day comes new strength and new thoughts.',
-  ];
+const randomQuotes = [
+  {
+    quote: 'Quality is not an act, it is a habit',
+    author: 'Aristotle',
+  },
+  {
+    quote:
+      'Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.',
+    author: 'Norman Vincent Peale',
+  },
+  {
+    quote: 'Life is 10% what happens to you and 90% how you react to it.',
+    author: 'Charles R. Swindoll',
+  },
+  {
+    quote: 'If you are going through hell, keep going.',
+    author: 'Winston Churchill',
+  },
+  {
+    quote:
+      'Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.',
+    author: 'Samuel Beckett',
+  },
+  {
+    quote: 'With the new day comes new strength and new thoughts.',
+    author: 'Eleanor Roosevelt',
+  },
+];
 
 const quoteElement = document.querySelector('#quote');
 const authElement = document.querySelector('#author');
 const button = document.querySelector('#button');
 
-function autoQuote(){
-    const quoteIndex = Math.floor(Math.random() * 6);
-    quoteElement.textContent = randomQuote[quoteIndex]
+function autoQuote() {
+  const quoteIndex = Math.floor(Math.random() * randomQuotes.length);
+  quoteElement.textContent = randomQuotes[quoteIndex]
 }
 autoQuote();
 button.addEventListener('click', autoQuote)
