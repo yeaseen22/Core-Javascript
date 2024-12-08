@@ -87,10 +87,10 @@ function removeDuplicates(arr) {
         if (arr[j] !== arr[i]) {
             i = i + 1;
             arr[i] = arr[j];
-            arr.length = arr.length - 1;
+            
         }
     }
-
+    arr.length = i + 1;
     return i + 1;
 }
 
