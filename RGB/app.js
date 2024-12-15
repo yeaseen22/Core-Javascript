@@ -1,5 +1,6 @@
 /**
  * change the background color of the page by clicking the button
+ *  add a button to copy the color code
  */
 
 // step 1: create onload handler
@@ -8,14 +9,20 @@ window.onload = () => {
 }
 function main() {
     const root = document.getElementById('root')
-    const btn = document.getElementById('change-btn')
+    const chnageBtn = document.getElementById('change-btn')
     const output = document.getElementById('output')
+    const copyBtn = document.getElementById('copy-btn')
 
 
-    btn.addEventListener('click', function () {
+    chnageBtn.addEventListener('click', function () {
         const bgColor = generateHEXColor();
         root.style.backgroundColor = bgColor
         output.value = bgColor;
+    })
+
+
+    copyBtn.addEventListener('click', function () {
+        navigator.clipboard.writeText(output.value)
     })
 }
 
@@ -46,4 +53,6 @@ function generateHEXColor() {
 // step 4: handle the click event
 
 // step 5: also display the hex code to a disabled input field
+// step 6: handle the change button click event
+// step 7: handle the copy button click event
 
