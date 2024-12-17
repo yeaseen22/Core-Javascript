@@ -24,6 +24,23 @@ body {
 	gap: 1rem;
 }
 
+.input-group {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	position: relative;
+	/* overflow: hidden; */
+}
+
+.input-icon {
+	position: absolute;
+	padding: 0.45rem;
+	background-color: #ddd;
+	color: #424242;
+	border-top-left-radius: 0.25rem;
+	border-bottom-left-radius: 0.25rem;
+}
+
 input[type='text'],
 input[type='text']:disabled,
 .copy-btn {
@@ -35,7 +52,16 @@ input[type='text']:disabled,
 	box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-#change-btn {
+.output {
+	margin-left: 1rem;
+}
+
+.output:focus {
+	outline: none;
+	border: none;
+}
+
+.change-btn {
 	padding: 1rem 3rem;
 	outline: none;
 	background-color: #000;
@@ -48,7 +74,7 @@ input[type='text']:disabled,
 	cursor: pointer;
 }
 
-#change-btn:hover {
+.change-btn:hover {
 	background-color: #fff;
 	color: #000;
 	border: 1px solid #000;
@@ -63,7 +89,6 @@ h1 {
 .copy-btn {
 	cursor: pointer;
 }
-
 
 .toast-message {
 	position: fixed;

@@ -21,27 +21,30 @@ function main() {
     chnageBtn.addEventListener('click', function () {
         const bgColor = generateHEXColor();
         root.style.backgroundColor = bgColor
-        output.value = bgColor;
+        output.value = bgColor.substring(1);
     })
 
 
     copyBtn.addEventListener('click', function () {
-        navigator.clipboard.writeText(output.value)
+        navigator.clipboard.writeText(`#${output.value}`)
         if (div !== null) {
             div.remove();
             div = null;
         }
-        if(isHexValid(output.value)){
-            generateToastMessage(`${output.value} copied`)
-        }else{
+        if (isHexValid(output.value)) {
+            generateToastMessage(`#${output.value} copied`)
+        } else {
             alert('Not a valid color code')
         }
     })
 
-    output.addEventListener('keyup', function(e){
+    output.addEventListener('keyup', function (e) {
         const color = e.target.value;
-        if(color && isHexValid(color)){
-            root.style.backgroundColor = color;
+        if (color) {
+            output.value = color.toUpperCase();
+            if (color && isHexValid(color)) {
+                root.style.backgroundColor = `#${color}`;
+            }
         }
     })
 }
@@ -88,17 +91,17 @@ function generateToastMessage(msg) {
 
 
     document.body.appendChild(div)
-    
+
 }
 
 /**
  * @param {string} color 
  */
 function isHexValid(color) {
-    if(color.length  !== 7 )return false;
-    if(color[0] !== '#') return false;
+    if (color.length !== 6) return false;
+    // if(color[0] !== '#') return false;
 
-    color = color.substring(1)
+    // color = color.substring(1)
     return /^[0-9A-Fa-f]{6}$/i.test(color);
 }
 
