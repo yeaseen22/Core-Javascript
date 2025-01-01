@@ -24,6 +24,19 @@ body {
 	gap: 1rem;
 }
 
+
+
+.label-group {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.label-group label {
+	color: #fff;
+	text-shadow: 1px 1px 0 #333, -1px -1px 0 #333, 1px -1px 0 #333,
+		-1px 1px 0 #333, 2px 2px 5px rgba(0, 0, 0, 0.65);
+}
+
 .input-group {
 	display: flex;
 	align-items: center;
@@ -117,6 +130,7 @@ h1 {
 		transform: translateX(200px);
 		opacity: 0;
 	}
+
 	to {
 		transform: translateX(0px);
 		opacity: 1;
@@ -128,6 +142,7 @@ h1 {
 		transform: translateX(0px);
 		opacity: 1;
 	}
+
 	to {
 		transform: translateX(200px);
 		opacity: 0;

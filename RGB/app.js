@@ -16,12 +16,17 @@ function main() {
     const chnageBtn = document.getElementById('change-btn')
     const output = document.getElementById('output')
     const copyBtn = document.getElementById('copy-btn')
+    const output2 = document.getElementById('output2')
 
 
     chnageBtn.addEventListener('click', function () {
-        const bgColor = generateHEXColor();
-        root.style.backgroundColor = bgColor
-        output.value = bgColor.substring(1);
+        const color = generateColorDecimal()
+        const hex = generateHEXColor(color);
+        const rgb = generateRBGAColor(color)
+
+        root.style.backgroundColor = hex
+        output.value = hex.substring(1);
+        output2.value = rgb
     })
 
 
@@ -60,16 +65,67 @@ function main() {
 //     return `rgb(${red},${green},${blue})`
 // }
 
-function generateHEXColor() {
-    // #000000 #ffffff
+// function generateHEXColor() {
+//     // #000000 #ffffff
 
+//     const red = Math.floor(Math.random() * 255)
+//     const green = Math.floor(Math.random() * 255);
+//     const blue = Math.floor(Math.random() * 255);
+
+
+//     return `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`
+// }
+
+/**
+ * function1 generate three random decimal number for red, green, blue, return as an object
+ * @param {*} msg 
+ */
+
+function generateColorDecimal() {
     const red = Math.floor(Math.random() * 255)
     const green = Math.floor(Math.random() * 255);
     const blue = Math.floor(Math.random() * 255);
 
-
-    return `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`
+    return {
+        red,
+        blue,
+        green
+    }
 }
+
+/**
+ * function2 generate hex color code
+ * @param {*} msg 
+ */
+function generateHEXColor({red, green, blue}) {
+
+    // const { red, green, blue } = generateColorDecimal();
+
+    // not need because of the function getTwoCode
+    // const twoCodeRed = red <= 9 ? `0${red}` : red.toString(16)
+    // const twoCodeGreen = green <= 9 ? `0${green}` : green.toString(16)
+    // const twoCodeBlue = blue <= 9 ? `0${blue}` : blue.toString(16)
+
+    const getTwoCode = (value) => {
+        const hex = value.toString(16)
+
+        return hex.length === 1 ? `0${hex}` : hex;
+    }
+
+    return `#${getTwoCode(red)}${getTwoCode(green)}${getTwoCode(blue)}`.toUpperCase();
+}
+
+/**
+ * function 3 generate rgba color code 
+ * @param {*} msg 
+ */
+function generateRBGAColor({ red, green, blue }) {
+    // const {red, green, blue} = generateColorDecimal();
+    return `rgb(${red}, ${green}, ${blue})`;
+
+}
+
+
 
 function generateToastMessage(msg) {
     div = document.createElement('div')
@@ -118,4 +174,8 @@ function isHexValid(color) {
 // step 11: create isHexValid function
 // step 12: implement change handler on input field
 // step 13:  prevent copying hex code if it is not valid
+// step 14: show rgb color to but do not edit it
+// step 15: user can copy rgb color code
+// step 16:  refector the color generator function
+// step 17: udpate color code to display rgb color code
 
