@@ -35,7 +35,21 @@ let text2 = text.substring(1, 10); // substring start value is 0
 // console.log(text.slice(10));
 
 let txt = "hello world";
-console.log(txt.charAt(4));
+// console.log(txt.charAt(4));
 
 // console.log(typeof NaN);
 // console.log(typeof Infinity);
+
+
+function getLenght(s){
+    let i = 0, cnt=0;
+    while(s[i] !== undefined){
+        i++;
+        cnt++
+    }
+    return cnt;
+}
+
+let s = "GeeksForGeeks"
+console.log(getLenght(s));
+
