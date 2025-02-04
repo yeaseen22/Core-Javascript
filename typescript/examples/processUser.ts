@@ -1,6 +1,6 @@
 export type User = {
     id: Number,
-    firstName: String,
+    firstName?: String,
     lastName?: String,
     age: Number,
     score: Number
@@ -59,3 +59,15 @@ export const processUserData = (
     return transformedData;
 }
 
+
+// Example Usage
+const users: User[] = [
+    { id: 1, firstName: "Alice", lastName: "Doe", age: 25, score: 90 },
+    { id: 3, firstName: "Charlie", lastName: "Brown", age: 25, score: 80 },
+];
+
+const filterCriteria: FilterCriteria = { age: 25 }; // Filter users by age
+const fieldsToAggregate: FieldsToAggregate[] = ["score", "age"]; // Aggregate 'score' and 'age'
+
+const result = processUserData(users, filterCriteria, fieldsToAggregate);
+console.log(result);
