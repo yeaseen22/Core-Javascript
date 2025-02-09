@@ -12,9 +12,9 @@ const latiture: number = 12.2
 const isActive: boolean = true;
 
 // type array anotation
-const numbers: number[] = [1, 2, 3, 4]
+const numberArray: number[] = [1, 2, 3, 4]
 
-const names: string[] = ['a', 'b', 'c']
+const namesString: string[] = ['a', 'b', 'c']
 
 
 const flags: boolean[] = [true, false, false, true]

@@ -211,6 +211,29 @@ let {
 
 
 
+// simple destructuring
+const arr = [1, 2, 3, 4, 5];
+
+const [first] = arr;
+
+const obj = {
+  lang: "JavaScript",
+  library: "React",
+}
+
+const { lang } = obj
+
+
+
+function sum(...all) {
+  let result = 0;
+  all.forEach((n) => {
+    result = result + n;
+  })
+  return result
+}
+
+sum(1, 2)
 
 
 
