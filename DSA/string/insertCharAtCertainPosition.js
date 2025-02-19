@@ -24,7 +24,7 @@ function inserChatAtCertainPosition(string, stars) {
 const chars = [1, 5, 7, 9]
 
 const result = inserChatAtCertainPosition("Helloworld", chars)
-// console.log(result, 'result');
+console.log(result, 'result');
 
 
 /**
@@ -47,4 +47,4 @@ function removeAllOccurrences(string, char){
 
 const resultOccurrences = removeAllOccurrences("Helloworld", "l");
 
-console.log(resultOccurrences, 'resultOccurrences');
+// console.log(resultOccurrences, 'resultOccurrences');
