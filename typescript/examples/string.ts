@@ -11,4 +11,7 @@ console.log(str.toUpperCase());
 
 console.log(str.toLowerCase())
 
+let strSlice: string = str.slice(0.3) 
+console.log('string slice',strSlice);
+
 
