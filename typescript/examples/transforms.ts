@@ -8,20 +8,51 @@ type User1 = {
 }
 
 
+
+
 type User1Key = keyof User1;
 
 type FilterCritieria = {
     [K in User1Key]?: User1[K]
 }
 
-type FieldsToAggregate = User1Key[];
+type FieldsToAggregate = ('score' | 'age')[];
 
-function processUserData(users: User1[], cirteria: FilterCritieria = {}, fieldsToAggregate: FieldsToAggregate = []) {
-    const filteredUsers = users.filter(user => {
-        return Object.entries(cirteria).every(([key, value]) => user[key as User1Key] === value)
-    })
+type TransformedUser = {
+    id: number;
+    fullName: string;
+    age: number;
+    score: number;
 }
 
+
+function processUserData(users: User1[], criteria: FilterCritieria = {}, fieldsToAggregate: FieldsToAggregate = []) {
+    const filteredUsers = users.filter(user => {
+
+        return Object.entries(criteria).every(([key, value]) => user[key as User1Key] === value)
+    })
+
+    const aggregatedData = fieldsToAggregate.reduce((acc, field) => {
+
+        acc[field] = filteredUsers.reduce((sum, user) => {
+            if (user[field] && typeof user[field] === 'number') {
+                return sum + user[field]!;
+            }
+            return sum;
+        }, 0);
+        return acc;
+
+
+    }, {} as Record<typeof fieldsToAggregate[number], number>)
+
+    const transformedData = filteredUsers.map(user => ({
+        id: user.id,
+        fullName: `${user.firstName} ${user.lastName ?? ''}`.trim(),
+        ...aggregatedData,
+    }))
+
+    return transformedData
+}
 
 const users = [
     {

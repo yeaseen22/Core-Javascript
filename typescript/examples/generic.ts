@@ -69,3 +69,6 @@ async function main2() {
     console.log('own custom fetching function that used any data fetching work', user.data.name);
 
 }
+
+
+
