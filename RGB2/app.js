@@ -54,7 +54,7 @@ window.onload = () => {
 	displayColorBoxes(document.getElementById('preset-colors'), defaultPresetColors)
 };
 
-// main or boot function, this function will take care of getting all the DOM references
+//region main or boot function, this function will take care of getting all the DOM references
 function main() {
 	// dom references
 	const generateRandomColorBtn = document.getElementById(

@@ -327,12 +327,69 @@ const doubleNumbers2 = mapFunction(numberForHigheOrdFun, (number) => number * 2)
 // console.log(doubleNumbers2);
 
 
+const products = [
+    { name: "Laptop", price: 1200 },
+    { name: "T-shirt", price: 25 },
+    { name: "Headphones", price: 150 },
+    { name: "Jeans", price: 80 },
+    { name: "Socks", price: 10 },
+    { name: "Smartphone", price: 800 },
+  ];
+  
+  function filterByPrice(products) {
+    return products.filter((product) => product.price >= 50);
+  }
+  
+  function applyDiscount(products) {
+    return products.map((product) => ({
+      ...product,
+      price: product.price * 0.9, // Apply 10% discount
+    }));
+  }
+  
+  function formatName(products) {
+    return products.map((product) => ({
+      ...product,
+      name: product.name.toUpperCase(),
+    }));
+  }
+  
+  
+  function pipe(...functions){
+      return function(x){
+          return functions.reduce((acc, func) => func(acc),x)
+      }
+  }
+  
+  const pipeline = pipe(filterByPrice, applyDiscount, formatName)
+  const result = pipeline(products)
+  console.log(result)
+  
 
 
 
 
+  function double(x) {
+    return x * 2;
+  }
+  
+  function square(x) {
+    return x * x;
+  }
+  
+  function increment(x) {
+    return x + 1;
+  }
 
-
+  function compose(f, g) {
+    return function(x) {
+      return f(g(x));
+    };
+  }
+  
+  const composedFunction = compose(increment, compose(square, double));
+  
+  console.log(composedFunction(3)); // Output: 37 (double(3) = 6, square(6) = 36, increment(36) = 37)
 
 
 
