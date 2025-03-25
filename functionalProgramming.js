@@ -258,11 +258,11 @@ const tf = new Function(...fData.params, fBody);
 
 
 
-let number = [1,2,3,4];
+let number = [1, 2, 3, 4];
 
-function sumFunc(acc, cur, index){
+function sumFunc(acc, cur, index) {
     console.log(`Index ${index} - Acc ${acc} - ${cur}`);
-    console.log(acc+cur);
+    console.log(acc + cur);
     return acc;
 }
 
@@ -283,8 +283,8 @@ function sumFunc(acc, cur, index){
  * - Hoisting
  */
 
- //#region make sandwiches using higher order function
-function makeSandwiches(getFillings){
+//#region make sandwiches using higher order function
+function makeSandwiches(getFillings) {
     const bread = "sourdough";
     const cheese = 'cheder';
     const fillings = getFillings();
@@ -292,21 +292,21 @@ function makeSandwiches(getFillings){
     console.log(`Here's your delicious ${sandwiches} sandwich!`);
 }
 
-function getHam(){
+function getHam() {
     return 'Ham';
 }
 
-function getTurkey(){
+function getTurkey() {
     return "Turkey";
 }
 
-function veggies(){
+function veggies() {
     return "lettuce, tomato, cucumber";
 }
 
 // makeSandwiches(getHam)
 
-const numberForHigheOrdFun = [1,2,3,4,5];
+const numberForHigheOrdFun = [1, 2, 3, 4, 5];
 
 const doubleNumbers = numberForHigheOrdFun.map((num) => num * 2);
 // console.log(doubleNumbers);
@@ -314,19 +314,19 @@ const doubleNumbers = numberForHigheOrdFun.map((num) => num * 2);
 const fileteredNumber = numberForHigheOrdFun.filter((num) => num > 3)
 // console.log(fileteredNumber);
 
-function mapFunction(numberForHigheOrdFun, transformFunction){
+function mapFunction(numberForHigheOrdFun, transformFunction) {
     const transformed = [];
-    for(let i = 0; i < numberForHigheOrdFun.length; i++) {
+    for (let i = 0; i < numberForHigheOrdFun.length; i++) {
         transformed.push(transformFunction(numberForHigheOrdFun[i]))
     }
-    
+
     return transformed;
 }
 
 const doubleNumbers2 = mapFunction(numberForHigheOrdFun, (number) => number * 2)
 // console.log(doubleNumbers2);
 
-
+// #region function pipeline
 const products = [
     { name: "Laptop", price: 1200 },
     { name: "T-shirt", price: 25 },
@@ -334,63 +334,134 @@ const products = [
     { name: "Jeans", price: 80 },
     { name: "Socks", price: 10 },
     { name: "Smartphone", price: 800 },
-  ];
-  
-  function filterByPrice(products) {
+];
+
+function filterByPrice(products) {
     return products.filter((product) => product.price >= 50);
-  }
-  
-  function applyDiscount(products) {
+}
+
+function applyDiscount(products) {
     return products.map((product) => ({
-      ...product,
-      price: product.price * 0.9, // Apply 10% discount
+        ...product,
+        price: product.price * 0.9, // Apply 10% discount
     }));
-  }
-  
-  function formatName(products) {
+}
+
+function formatName(products) {
     return products.map((product) => ({
-      ...product,
-      name: product.name.toUpperCase(),
+        ...product,
+        name: product.name.toUpperCase(),
     }));
-  }
-  
-  
-  function pipe(...functions){
-      return function(x){
-          return functions.reduce((acc, func) => func(acc),x)
-      }
-  }
-  
-  const pipeline = pipe(filterByPrice, applyDiscount, formatName)
-  const result = pipeline(products)
-  console.log(result)
-  
+}
+
+
+function pipe(...functions) {
+    return function (x) {
+        return functions.reduce((acc, func) => func(acc), x)
+    }
+}
+
+const pipeline = pipe(filterByPrice, applyDiscount, formatName)
+const result = pipeline(products)
+console.log(result)
 
 
 
 
-  function double(x) {
+// #region composition function
+function double(x) {
     return x * 2;
-  }
-  
-  function square(x) {
-    return x * x;
-  }
-  
-  function increment(x) {
-    return x + 1;
-  }
+}
 
-  function compose(f, g) {
-    return function(x) {
-      return f(g(x));
+function square(x) {
+    return x * x;
+}
+
+function increment(x) {
+    return x + 1;
+}
+
+function compose(f, g) {
+    return function (x) {
+        return f(g(x));
+    };
+}
+
+const composedFunction = compose(increment, compose(square, double));
+
+console.log(composedFunction(3)); // Output: 37 (double(3) = 6, square(6) = 36, increment(36) = 37)
+
+
+//#region Currying
+
+function add(a, b) {
+    return a + b;
+  }
+  
+  function curriedAdd(a) {
+    return function(b) {
+      return a + b;
     };
   }
   
-  const composedFunction = compose(increment, compose(square, double));
+  const add5 = curriedAdd(5);
+  // console.log(add5(3)); // Output: 8
   
-  console.log(composedFunction(3)); // Output: 37 (double(3) = 6, square(6) = 36, increment(36) = 37)
 
-
-
-
+  function calculateVolume(length,height,width){
+      return length*height*width;
+  }
+  function calculateArea(length,height,width){
+      return length*height*width;
+  }
+  
+//#region use for curried and partial application
+  function curriedVolume(a){
+      return function(b){
+          return function(c){
+              return a*b*c;
+          }
+      }
+  }
+  
+  const calculateVol = curriedVolume(4)
+//   console.log(calculateVol(3)(2))
+  
+  const calculateAreas = curriedVolume(1)
+//   console.log(calculateAreas(4)(3))
+  
+  
+  
+function Just(value) {
+    return {
+      flatMap: function(func) {
+        return func(value);
+      },
+    };
+  }
+  
+  const Nothing = {
+    flatMap: function() {
+      return Nothing;
+    },
+  };
+  
+  function safeDivide(a, b) {
+    if (b === 0) {
+      return Nothing;
+    }
+    return Just(a / b);
+  }
+  
+  function reciprocal(maybeValue) {
+    if (maybeValue === Nothing) {
+      return Nothing;
+    }
+    return Just(1 / maybeValue);
+  }
+  
+  const result1 = safeDivide(10, 2).flatMap(reciprocal); // Just(0.2)
+  const result2 = safeDivide(10, 0).flatMap(reciprocal); // Nothing
+  
+  console.log(result1);
+  console.log(result2);
