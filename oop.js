@@ -13,16 +13,16 @@ var recTangle = {
   },
 };
 
-// recTangle.draw();
-// var newObj = {};
-// newObj = recTangle;
-// recTangle = null;
-// console.log(newObj.height)
+recTangle.draw();
+var newObj = {};
+newObj = recTangle;
+recTangle = null;
+console.log(newObj.height)
 
 // about this
-// function myFunc () {
-//     console.log(this)
-// }
+function myFunc () {
+    console.log(this)
+}
 
 // myFunc()
 // new myFunc()

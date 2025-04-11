@@ -192,7 +192,7 @@ let option = {
 
 // let { title, width, height } = option;
 
-({ title, width, height } = { title: "menu", widht: 200, height: 100 });
+// ({ title, width, height } = { title: "menu", widht: 200, height: 100 });
 
 let options = {
   size: {
@@ -209,6 +209,14 @@ let {
   title = "menu",
 } = options;
 
+
+let {
+  size: {widht1, height2},
+  items: {item3, item4},
+  title1 ='menu'
+} = options
+
+console.log('another destructing', title1)
 
 
 // simple destructuring

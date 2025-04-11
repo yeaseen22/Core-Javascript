@@ -35,6 +35,12 @@ function myForEach (arr, cb) {
     }
 }
 
+function myForEach2(arr, cb){
+    for(let i=0; i<arr.length; i++){
+        cb(arr[i], i, arr,)
+    }
+}
+
 const nums = [1, 2, 3, 4];
 let sum = 0;
 

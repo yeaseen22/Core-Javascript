@@ -12,7 +12,7 @@ let user = {
   childObj: {
     newName: "Roadside Coder",
     getDetails() {
-      // console.log(this.newName);
+      // console.log('testing wtih inner obj = ',this.newName);
     },
   },
 };
@@ -23,7 +23,7 @@ let user2 = {
   name: "piyush",
   age: 22,
   getDetails: () => {
-    // console.log(this);
+    // console.log('object this arrow fn undefined= ',this);
   },
 };
 user2.getDetails();
@@ -33,7 +33,7 @@ let user3 = {
   age: 22,
   getDetails() {
     const arrowForGetDe = () => {
-      // console.log(this.name);
+      // console.log('arrow fn inside arrow fn this working = ',this.name);
     };
     arrowForGetDe();
   },
@@ -46,12 +46,13 @@ class user4 {
   }
 
   getName() {
-    // console.log(this.name);
+    console.log('class constructor fun this = ',this.name);
+    return this.name;
   }
 }
 
 const User = new user4("Armaan");
-// console.log(User);
+// console.log(User.getName());
 
 const users5 = {
   firstName: "armaan",
@@ -60,25 +61,27 @@ const users5 = {
     return this.firstName;
   },
 };
-// console.log(users5.getName());
+// console.log('from object ',users5.getName());
 
 function makeUser() {
   return {
     name: "John",
-    // ref: this,
+    ref1: this,
     ref: function () {
       return this;
     },
   };
 }
 
-// let makeuser = makeUser();
-// console.log(makeUser.ref.name);
+let makeuser = makeUser();
+// console.log(makeuser.ref.name);
+console.log(makeuser.ref1);
+
 
 const user6 = {
   name: "hello",
   logMessae() {
-    console.log(this.name);
+    console.log('outside ',this.name);
   },
 };
 
@@ -88,11 +91,11 @@ function getNameOfThis() {
   };
 }
 
-// getNameOfThis()();
+getNameOfThis()();
 
-// setTimeout(user6.logMessae, 1000); // for workable this code
+setTimeout(user6.logMessae, 1000); // for workable this code
 setTimeout(function () {
-  // user6.logMessae();
+  user6.logMessae();
 }, 1000);
 
 var length = 4;
