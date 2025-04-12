@@ -16,7 +16,7 @@ class Queue {
             console.log('queue is full');
             return false;
         }
-        this.queue[this.rear] = item;
+        this.queue[this.rear++] = item;
     }
 
     dequeue() {
@@ -58,5 +58,5 @@ class Queue {
 }
 
 
-
+module.exports = Queue;
 

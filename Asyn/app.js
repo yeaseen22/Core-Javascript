@@ -26,7 +26,7 @@
 
 const placeOrder = (item) => {
     console.log(`Pleacing order for ${item}`);
-    setTimeout((item) => {
+    setTimeout(() => {
         console.log(`${item} is ordered and on it's way`);
         waitForDelivery(item);
     })
@@ -40,7 +40,7 @@ const waitForDelivery = (item) => {
     })
 }
 
-const enjoyDelivery = () => {
+const enjoyDelivery = (item) => {
     console.log(`Enjoying the delivered ${item}! 🎉😋`);
 }
 
@@ -49,7 +49,7 @@ const orderAndWaitDelivery = () => {
     placeOrder(item);
 }
 
-// orderAndWaitDelivery();
+orderAndWaitDelivery();
 
 // async await function
 async function test() {
@@ -121,11 +121,11 @@ let iterate = asyncIterable[Symbol.asyncIterator]();
 
 // For Await of Loop in Javascript
 
-// (async function () {
-//     for await (let v of asyncIterable){
-//         console.log(v);
-//     }
-// })()
+(async function () {
+    for await (let v of asyncIterable){
+        console.log(v);
+    }
+})()
 
 
 // async generator

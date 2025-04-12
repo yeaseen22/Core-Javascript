@@ -1,10 +1,12 @@
 // function to search a key to  be deleted
 function findElement(arr, n, key) {
     let i;
-    for (i = 0; i < n; i++)
-        if (arr[i] == key)
+    for(i=0; i<n; i++){
+        if(arr[i] === key){
             return i;
-    return -1;
+        }
+        return -1;
+    }
 }
 
 // Function to delete an element
@@ -13,7 +15,7 @@ function deleteElement(arr, n, key) {
     let pos = findElement(arr, n, key);
 
     if (pos == -1) {
-        document.write("Element not found");
+        console.log("Element not found");
         return n;
     }
     // Deleting element
