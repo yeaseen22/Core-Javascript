@@ -42,7 +42,7 @@ function loadQuestion() {
     clearInterval(timer)
     leftTimer = 15;
     updateTimer();
-    timer = setInterval(() => countdonw, 1000);
+    timer = setInterval(countdonw, 1000);
 
     
     const q = questions[currentQuestion]
@@ -53,7 +53,7 @@ function loadQuestion() {
         const btn = document.createElement('button')
         btn.classList.add('option-btn');
         btn.textContent = option;
-        btn.addEventListener('click', () => selectAnswer(index))
+        btn.addEventListener('click', () => selectAnswer(index,true))
         optionsEl.appendChild(btn)
     });
     nextBtn.style.display = 'none'
@@ -64,7 +64,7 @@ function countdonw(){
     updateTimer();
     if(leftTimer === 0){
         clearInterval(timer)
-        selectAnswer(questions[currentQuestion]?.correct)
+        selectAnswer(questions[currentQuestion]?.correct, false)
     }
 }
 
@@ -83,18 +83,18 @@ nextBtn.addEventListener('click', () => {
     }
 })
 
-function selectAnswer(index) {
+function selectAnswer(index,shouldScore) {
     const q = questions[currentQuestion]
     const button = document.querySelectorAll('.option-btn')
 
     button.forEach(btn => btn.disabled = true)
 
     if (index === q.correct) {
-        score++;
-        button[index].classList.add('correct')
+        shouldScore && score++;
+        button[index].classList.add('correct');
     } else {
-        button[index].classList.add('wrong')
-        button[q.correct].classList.add('correct')
+        button[index].classList.add('wrong');
+        button[q.correct].classList.add('correct');
     }
 
     nextBtn.style.display = 'inline-block'
