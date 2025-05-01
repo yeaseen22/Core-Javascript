@@ -87,7 +87,7 @@ const groupedObject = products2.reduce((acc, { name, price }) => {
 
 let grouping2 = Object.values(groupedObject).sort((a, b) => b.totalPrice - a.totalPrice)
 
-// console.log('grouping', grouping2);
+console.log('grouping', grouping2);
 
 const matrix = [
     [1, 2, 3],

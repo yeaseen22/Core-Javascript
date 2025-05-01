@@ -109,7 +109,3 @@ const group = words.reduce((acc, cur) => {
 }, {})
 
 console.log(group)
-
-
-
-
