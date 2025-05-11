@@ -101,7 +101,50 @@ const pFlavour2 = createAsyncTasks('p2', 400)
 const pFlavour3 = createAsyncTasks('p3', 100)
 
 // to make all promise use in build method
-Promise.all([pFlavour1,pFlavour2,pFlavour3]).then((data) => {  // no performance benefits
-    console.log('form promise all',data);
-    
+Promise.all([pFlavour1, pFlavour2, pFlavour3]).then((data) => {  // no performance benefits, if one reject then all resolved promised discard
+    // console.log('form promise all', data);
+
 })
+
+Promise.allSettled([pFlavour1, pFlavour2, pFlavour3]).then((data) => {  // wait for all promise to resolve or reject, then giving resolve and reject data, there is no reject method, and its array of object
+    // console.log('form promise all', data);
+
+})
+
+Promise.race([pFlavour1, pFlavour2, pFlavour3]).then((data) => {  // return one resolve or reject faster than all promise
+    // console.log('form promise all', data);
+
+})
+
+Promise.any([pFlavour1, pFlavour2, pFlavour3]).then((data) => {  // if all promise reject it tell that all rejected and catch also execute. but it give resolve one and fastest one.
+    // console.log('form promise all', data);
+
+})
+
+
+function MyPromiseAll(arrayOfPromise) {
+    return new Promise(function (resolve, reject) {
+        const result = [];
+        let flag = 0;
+
+        for (let i = 0; i < arrayOfPromise.length; i++) {
+            const pr = arrayOfPromise[i]
+
+            pr.then((data) => {
+                flag++;
+                result[i] = data;
+
+                if (flag === arrayOfPromise.length) {
+                    resolve(data)
+                }
+            }).catch((erro) => {
+                reject(erro)
+            })
+        }
+    })
+}
+
+// console.log('testin',MyPromiseAll(pFlavour1, pFlavour2, pFlavour3));
+
+const all = MyPromiseAll(pFlavour1,pFlavour2,pFlavour3).then
+console.log('own promise all', all);
