@@ -26,13 +26,13 @@ let users = [
   { id: 4, name: "Doe" },
 ];
 
-const userReduce = users.reduce((acc,cur,index,array) => {
-  
-  console.log('accumulator',acc);
-  console.log('current',cur);
+const userReduce = users.reduce((acc, cur, index, array) => {
+
+  // console.log('accumulator', acc);
+  // console.log('current', cur);
 
   // return cur;
-},{id:1.1, name: 'default'})
+}, { id: 1.1, name: 'default' })
 
 let userArr = users.find((item) => item.id == 1);
 let someUser = users.filter((item) => item.id > 3);
@@ -85,4 +85,71 @@ const myBoy = ["Hm", "Nayem", "Befari"];
 const myChildren = myGirl.concat(myBoy);
 // console.log(myChildren);
 
-// sorting
+// map polyfill
+const arrF = [1, 2, 3, 4, 5];
+// const thisIsThis = { hey: 1 }
+
+// const result = Mymap(arrF, transformArray, thisIsThis)
+
+// function transformArray(elem, index, array) {
+//   return elem * elem;
+// }
+
+// function Mymap(arr, callbackfn, thisArgs) {
+//   const finalArray = [];
+//   for (let i = 0; i < arr.lenght; i++) {
+//     const value = arr[i];
+
+//     const newValue = callbackfn.call(thisArgs, value, i, arr)
+//     finalArray.push(newValue)
+//   }
+
+//   return finalArray;
+// }
+
+Array.prototype.myMap = function (callbackfn) {
+
+  if (typeof callbackfn !== 'function') {
+    throw new TypeError('callback function is not a function')
+  }
+  const result = new Array(this.length);
+  let flag = 0;
+
+  while (flag < this.length) {
+    if (this.hasOwnProperty(flag)) {
+      const value = this[flag];
+
+      const newValue = callbackfn(value, flag, this)
+
+      result[flag] = newValue;
+      flag++;
+    }
+  }
+  // for (let i = 0; i < this.length; i++) {
+  //   if (this.hasOwnProperty(i)) {
+  //     const value = this[i];
+
+  //     const newValue = callbackfn(value, i, this)
+
+  //     result.push(newValue)
+  //   }
+  // }
+
+  return result;
+}
+
+function getSquareOfNumber(num) {
+  return num * num
+}
+
+const result = arrF.myMap(getSquareOfNumber)
+console.log(result);
+
+const sample2 = new Array(10);
+const sample3 = [1,,,2,,,3,,4];
+const sample4 = {length: 2, 0:10,1:20,3:30}
+
+
+
+
+

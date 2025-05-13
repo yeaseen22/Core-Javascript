@@ -171,7 +171,7 @@ class DoublyLinkedList {
 
     const newNode = new Node(data);
 
-    // Update head
+    // Update head bigO(1)
     if (position === 0) {
         let current = this.head;
         newNode.next = current.next;
@@ -181,7 +181,7 @@ class DoublyLinkedList {
         return true;
     }
 
-    // Update tail
+    // Update tail big0(1)
     if (position === this.size - 1) {
         let current = this.tail;
         newNode.prev = current.prev;
@@ -214,11 +214,11 @@ class DoublyLinkedList {
 
 const myDoublyLinkedList = new DoublyLinkedList();
 myDoublyLinkedList.append(5);
-// myDoublyLinkedList.append(10);
-// myDoublyLinkedList.append(15);
+myDoublyLinkedList.append(10);
+myDoublyLinkedList.append(15);
 // myDoublyLinkedList.remove(10);
 // myDoublyLinkedList.insertAt(40, 1)
-myDoublyLinkedList.update(0, 20)
+myDoublyLinkedList.update(2, 20)
 console.log(myDoublyLinkedList);
 
 
