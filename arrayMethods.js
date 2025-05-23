@@ -143,13 +143,55 @@ function getSquareOfNumber(num) {
 }
 
 const result = arrF.myMap(getSquareOfNumber)
-console.log(result);
+// console.log(result);
 
 const sample2 = new Array(10);
-const sample3 = [1,,,2,,,3,,4];
-const sample4 = {length: 2, 0:10,1:20,3:30}
+const sample3 = [1, , , 2, , , 3, , 4];
+const sample4 = { length: 2, 0: 10, 1: 20, 3: 30 }
 
 
 
 
+const number = ['one', 'two', 'three', 'four', 'five']
+// index          0     1       2       3       4
+// index-         -5     -4     -3      -2      -1
+
+function show() {
+  // console.log(Array.prototype.slice.call(arguments).map(function () { }));
+  console.log([...arguments].map(function () { }));
+
+}
+
+// show(1,2,3)
+
+Array.prototype.mySlice = function (start, end) {
+
+  const length = this.length
+  if (start === undefined) {
+    start = 0;
+  } else if (start < 0) {
+    const newIndex = this.length - start;
+    start = Math.max(start, 0)
+  } else {
+    start = Math.min(start, length)
+  }
+
+  if (end === undefined) {
+    end = length;
+  } else if (end < 0) {
+    const newIndex = length + end;
+    end = Math.max(newIndex, 0)
+  } else {
+    end = Math.min(end, length)
+  }
+
+  const result = [];
+
+  for (let i = 0; i < end; i++) {
+    const v = this[i]
+    result.push(v)
+  }
+
+  return result
+}
 
