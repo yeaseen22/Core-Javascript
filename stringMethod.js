@@ -11,3 +11,18 @@ for (let i = 0; i < str.length; i++) {
 
 }
 
+console.log('Express'.charAt(2.9)); //convert 2.9 to 2
+
+function simpleHash(str) {
+    let has = 0;
+    for (let i = 0; i < str.length; i++) {
+        has += str.charCodeAt(i)
+    }
+
+    return has
+}
+
+const result = simpleHash('Hi')
+console.log('result',result);
+
+
