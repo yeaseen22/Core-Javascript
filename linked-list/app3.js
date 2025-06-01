@@ -1,4 +1,4 @@
-
+// circular linkedlist
 class Node {
     constructor(data) {
         this.head = data;
