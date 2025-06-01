@@ -106,16 +106,42 @@ const time = `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2
 console.log(time); // "09:05"
 
 function maskCard(cardNumber) {
-  return cardNumber.slice(-4).padStart(cardNumber.length, "*");
+    return cardNumber.slice(-4).padStart(cardNumber.length, "*");
 }
 
 console.log(maskCard("1234567812345678")); // "************5678"
 
 
 function generateSerial(index) {
-  return `SN-${index.toString().padStart(4, "0")}`;
+    return `SN-${index.toString().padStart(4, "0")}`;
 }
 
 console.log(generateSerial(7));    // "SN-0007"
 
+console.log("ha".repeat(3));
+console.log("hello world".replace('l', 'L'));
 
+console.log("hello world".replaceAll("l", "L"));
+console.log("one,two,three".split(","));
+
+function repeatWord(text, lenght) {
+    return text.repeat(lenght)
+}
+
+const test = repeatWord('hello', 3)
+// console.log('test', test);
+
+function replaceFirstA(text) {
+    return text.replace('a', '@')
+}
+
+let test2 = replaceFirstA("amazing app")
+// console.log('test2', test2);
+
+
+function convertToSlug(text) {
+    return text.split(" ").join("-")
+    
+}
+let test3 = convertToSlug("hello world how are you")
+console.log('test3',test3);
