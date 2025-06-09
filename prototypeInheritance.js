@@ -25,7 +25,7 @@ function Person(name, age) {
   person.age = age;
 
   // calling methods from the personMethods object
-
+  
   // person.eat = personMethods.eat;
   // person.age = personMethods.age;
 

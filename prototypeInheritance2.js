@@ -3,7 +3,6 @@
 function Person(name, age) {
     this.name = name;
     this.age = age;
-
 }
 
 // #region sub class
@@ -42,20 +41,19 @@ class Person {
     eat() {
         console.log(`${this.name} is eating`)
     }
-
 }
 
 
 class Cricketer extends Person {
     constructor(name, age, type, country) {
-        super(name,age)
+        super(name, age)
         this.name = name;
         this.age = age;
         this.type = type;
         this.country = country
     }
 
-    play(){
+    play() {
         console.log(`${this.name} is playing`);
     }
 }
