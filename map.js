@@ -41,7 +41,7 @@ let obj = {
 };
 
 let objToMap = new Map(Object.entries(obj));
-console.log('testing',objToMap);
+console.log('testing', objToMap);
 
 let mapToObj = Object.fromEntries([
   ["banana", 1],
@@ -49,7 +49,7 @@ let mapToObj = Object.fromEntries([
   ["meat", 4],
 ]);
 
-console.log('testing result ',mapToObj.meat);
+console.log('testing result ', mapToObj.meat);
 
 // mow create set
 let set = new Set([["oranges", "apples", "bananas"]]);
@@ -64,3 +64,69 @@ console.log('set', objToSet);
 // set.forEach((value, valueAgain, set) => {
 //   console.log(value);
 // });
+
+// key can be any type, map remember the original order in which the element were added to it.
+
+const map1 = new Map([
+  ['name', 'typescirpt'],
+  ['type', 'Yt'],
+  ['owner', 'tapas']
+])
+
+map1.set('owner', 'ts') /// owner key value replace
+map1.get('owner')
+
+const funMap = new Map();
+
+funMap.set(500, 'house');
+funMap.set('true', 'checking');
+
+let obj_map = { 'name': 'example' }
+
+funMap.set(obj, true)
+
+
+// create empty object
+const funObj = {}
+funObj[500] = 'housing number';
+console.log(funObj[500] === funObj['500']); //true typecoerse
+console.log(funMap.get(500) === funMap.get('500')); //false
+
+
+// region map property and method
+console.log(funMap.size);
+
+console.log(funMap.has(500)); //true  but string 300 should be false
+
+funMap.delete(500)
+funMap.clear()
+
+console.log('last map', funMap);
+
+// region iterate over map
+const ageMap = new Map([
+  ['Jack', 20],
+  ['Alan', 34],
+  ['Bill', 10],
+  ['Sam', 9]
+]);
+// getting all the keys
+console.log(ageMap.keys());
+
+
+// const mitr = ageMap.keys();
+// console.log('mtr' ,mitr);
+// mitr.forEach((item) => {
+// console.log(item)
+// })
+
+console.log(ageMap.values());
+console.log(ageMap.entries());
+ageMap.forEach((key,value) => {
+  console.log(`${key} is ${value} years old`);
+  
+})
+
+// for(const [keys,value] of ageMap){
+//   console.log(`${keys} is ${value} years old`);
+// }
