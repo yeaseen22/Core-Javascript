@@ -122,11 +122,31 @@ console.log(ageMap.keys());
 
 console.log(ageMap.values());
 console.log(ageMap.entries());
-ageMap.forEach((key,value) => {
+ageMap.forEach((key, value) => {
   console.log(`${key} is ${value} years old`);
-  
+
 })
 
 // for(const [keys,value] of ageMap){
 //   console.log(`${keys} is ${value} years old`);
 // }
+
+// convert object into map
+const address = {
+  'tapas': "bangalor",
+  "James": "Husten",
+  "selva": "Srilank"
+}
+const addressMap = new Map(Object.entries(address))
+
+// map to object
+const addr = Object.fromEntriess(addressMap)
+
+// map into array
+const map_Array = new Map
+map_Array.set('milk', 200)
+map_Array.set('tea', 300)
+map_Array.set('coffee', 500)
+
+console.log(Array.from(map_Array));
+console.log([...map_Array]);
