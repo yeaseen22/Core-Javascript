@@ -1,4 +1,23 @@
 // File: library-system.ts
+
+interface ILibraryUser {
+    readonly name: string;
+    readonly id: number;
+    listBorrowedBooks(): string[];
+}
+
+abstract class LibraryUser implements ILibraryUser {
+    protected borrowedBooks: Book[] = [];
+    constructor(public readonly name: string, public readonly id: number) { }
+
+    abstract borrowBook(book: Book): void;
+    abstract returnBook(book: Book): void;
+    
+    listBorrowedBooks(): string[] {
+        return this.borrowedBooks.map(book => `${book.title} by ${book.author}`);
+    }
+}
+
 class Book {
     private available: boolean = true;
 

@@ -145,3 +145,46 @@ function convertToSlug(text) {
 }
 let test3 = convertToSlug("hello world how are you")
 console.log('test3',test3);
+
+function splitName(string){
+    return string.split(" ")
+}
+
+const resultForSplit = splitName('John Doe Smith')
+console.log('result', resultForSplit);
+
+function capitalizeWords(string){
+    return string.split(" ").map((item) => item.replace(item[0], item[0].toUpperCase())).join(' ')
+}
+
+const capit = capitalizeWords("hello world")
+
+console.log('capital', capit);
+
+function censorBadWords(words, replace){
+    return words.replaceAll(replace, "****")
+}
+
+const bad = censorBadWords("You are stupid and stupid", "stupid") 
+console.log('bad', bad);
+
+function slugifySentence(statement){
+    return statement.toLowerCase().split(" ").join("-");
+}
+
+const slugy = slugifySentence("I Love JavaScript!")
+console.log('slugy', slugy);
+
+function countSentence(string){
+    return string.split(",")
+}
+
+const count = countSentence("Words")
+console.log('count', count);
+
+function highlightWord(string, replace){
+    return string.replace(string,`<strong>${replace} </strong>`)
+}
+
+const hightlist = highlightWord("I love coding", "coding")
+console.log(hightlist);
