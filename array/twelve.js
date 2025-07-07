@@ -11,7 +11,7 @@ let sum = 0;
 reuse(array, function(value, index, arr){
     
     sum+= value
-    console.log('login separtion ',sum);
+    console.log('logic separtion ',sum);
     
 })
 

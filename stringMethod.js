@@ -188,3 +188,13 @@ function highlightWord(string, replace){
 
 const hightlist = highlightWord("I love coding", "coding")
 console.log(hightlist);
+
+
+function maskEmail(email){
+    const [name,domain] = email.split('@');
+    console.log('function for mask',name, 'diff' ,domain);
+    
+    
+}   
+
+console.log(maskEmail("johndoe@gmail.com"));
