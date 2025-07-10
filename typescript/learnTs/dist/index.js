@@ -24,3 +24,17 @@ logMessage();
 // null and undefined
 let nothing = null;
 let notAssigned = undefined;
+// function type signature
+let greenFunction;
+let greenFunction2;
+greenFunction = function (name) {
+    return `Hi ${name}`;
+};
+greenFunction2 = function (name) {
+    return `Hi ${name}`;
+};
+// never return type
+function throwError() {
+    throw new Error("something went wrong");
+}
+throwError();
