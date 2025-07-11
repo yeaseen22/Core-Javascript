@@ -25,3 +25,5 @@ function dispalyStudent(student:Student):void{
 dispalyStudent(student1)
 
 
+
+

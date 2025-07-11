@@ -40,7 +40,10 @@ interface Person {
 }
 
 const p: Person = {
-    name: 'demo', age: 10
+    name: 'demo', age: 10,
+    greet: function (): void {
+        throw new Error("Function not implemented.");
+    }
 }
 
 // when to use type or interface
@@ -107,3 +110,69 @@ function handleAction(action: Action) {
 }
 handleAction('start')
 handleAction('pause')
+
+// type narrowing
+
+function processInput(input: string | number) {
+    if (typeof input === 'string') {
+        console.log('parse as string', input.trim());
+
+    } else {
+        console.log('parse as number', input * 2);
+
+    }
+}
+
+processInput("hello world")
+processInput(101)
+
+type Car = {
+    drive: () => void;
+}
+
+type Boat = {
+    sail: () => void;
+}
+
+function move(vehical: Car | Boat) {
+    if ("drive" in vehical) {
+        vehical.drive()
+    } else {
+        vehical.sail()
+    }
+}
+
+const car: Car = {
+    drive: () => {
+        console.log('car is driving');
+    }
+}
+
+move(car)
+
+class Dog1 {
+    bark() {
+        console.log('woof woof');
+    }
+}
+
+class Cat {
+    meow() {
+        console.log('Meow Meow');
+
+    }
+}
+
+function makeSound(animal: Dog1 | Cat){
+    if(animal instanceof Dog1){
+        animal.bark()
+    }else{
+        animal.meow()
+    }
+}
+
+const dog = new Dog1();
+const cat = new Cat();
+
+makeSound(dog)
+makeSound(cat)
