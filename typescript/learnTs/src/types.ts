@@ -67,7 +67,10 @@ interface Dog extends Animal {
 
 const myDog: Dog = {
     name: "Tom",
-    breed: 'golden'
+    breed: 'golden',
+    move: function (): void {
+        throw new Error("Function not implemented.");
+    }
 }
 
 // union
