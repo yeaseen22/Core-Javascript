@@ -49,3 +49,23 @@ imgElem.setAttribute('src', 'agan.jpg')
 imgElem.removeAttribute('srcset')
 imgElem.hasAttribute('src') //true
 
+// parent element/parent node
+const span2 = document.getElementById('text')
+console.log('id tag', span2);
+
+console.log('parent element', span2.parentElement);
+console.log('parent Node', span2.parentNode);
+
+// children and children nodes
+const mainElement = document.getElementById('main-id');
+// console.log('children', mainElement.children);
+// console.log('children node', mainElement.childNodes);
+console.log('first child',mainElement.firstChild);
+console.log('first child element', mainElement.firstElementChild);
+
+
+// nextSibling, nextElementSibling, previousSibling, previousElementSibling
+
+
+
+
