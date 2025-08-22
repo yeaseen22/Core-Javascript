@@ -1,0 +1,11 @@
+ul{
+    list-style: none;
+    padding: 0;
+}
+li{
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.complete{
+    text-decoration: line-through;
+}
