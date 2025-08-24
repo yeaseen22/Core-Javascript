@@ -32,3 +32,17 @@ function addTask(){
     console.log(task);
     
 }
+
+function filterTasks(e){
+    const search = document.getElementById("searchInput")
+   const input = search.value;
+
+   const items = document.querySelectorAll("ul#taskList li")
+
+   items.forEach((item) => {
+    item.style.display = item.innerText.toLowerCase().includes(input.toLowerCase()) ? "block" : "none";
+   })
+    console.log('li', items);
+    
+
+}
