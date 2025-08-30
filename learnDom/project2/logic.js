@@ -177,3 +177,85 @@
 //         item.style.display = item.innerText.toLowerCase().includes(input) ? "block" : "none";
 //     });
 // }
+
+
+function addTask(){
+    const inputTask = document.getElementById("taskInput")
+    const taskList = document.getElementById("taskList");
+    console.log(taskList);
+    
+
+    const task = inputTask.value;
+
+    if(task.trim() === "")return 
+
+    const li = document.createElement("li")
+
+    const span = document.createElement("span");
+    span.innerText = task
+
+    const complete = document.createElement("button")
+    complete.innerText = 'complete';
+    complete.style.marginLeft = '5px';
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = 'delete';
+    deleteBtn.style.marginLeft = '5px';
+
+    const editBtn = document.createElement("button");
+    editBtn.innerText = 'edit';
+    editBtn.style.marginLeft = '5px'
+
+    complete.onclick = function(){
+        li.classList.toggle('complete')
+    }
+
+    deleteBtn.onclick = function(){
+        li.remove()
+    }
+
+    editBtn.onclick = function(){
+        const input = document.createElement('input')
+        input.value = span.innerText;
+        li.replaceChild(input,span)
+
+        if(!li.querySelector('.save-btn')){
+            const button = document.createElement("button");
+            button.innerText = 'save';
+            li.classList.add('save-btn');
+            button.marginLeft = '5px';
+            li.appendChild(button)
+
+            button.onclick = function(){
+                span.innerText = input.value;
+                li.replaceChild(span,input)
+                button.remove()
+            }
+        }
+
+
+    }
+
+    li.appendChild(span);
+    li.appendChild(complete);
+    li.appendChild(deleteBtn)
+    li.appendChild(editBtn)
+
+
+    taskList.appendChild(li)
+
+    inputTask.value = ''
+}
+
+function filterTasks(){
+    const input = document.getElementById('searchInput')
+    const task = input.value.toLowerCase();
+
+    const item = document.querySelectorAll("ul#taskList li")
+    item.forEach((item) => {
+      item.style.display =   item.innerText.toLowerCase().includes(task) ? "block" : "none";
+    })
+
+    console.log('item', item);
+    
+}
