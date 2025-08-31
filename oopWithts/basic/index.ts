@@ -78,3 +78,101 @@ const user2 = new User('demo', 'demo@gmail.com')
 console.log(user2.userName);
 console.log(user2.email);
 
+interface IShape {
+    area(): number
+}
+
+class Circle implements IShape {
+    radius: number;
+
+    constructor(radius: number) {
+        this.radius = radius;
+    }
+
+    area(): number {
+        return Math.PI * this.radius * this.radius
+    }
+}
+
+class Square implements IShape {
+    side: number;
+
+    constructor(side: number) {
+        this.side = side;
+    }
+
+    area(): number {
+        return this.side * this.side;
+    }
+}
+
+const circle = new Circle(5);
+const square = new Square(4);
+
+console.log("Circle area:", circle.area());
+console.log("Square area:", square.area());
+
+
+class Triangle implements IShape{
+    base:number;
+    height:number;
+
+    constructor(base:number,height:number){
+        this.base = base;
+        this.height = height;
+    }
+
+    area():number{
+        return 0.5 * this.base * this.height;
+    }
+}
+const triangle = new Triangle(10, 5);
+console.log("Triangle area:", triangle.area()); // 25
+
+// Define the blueprint
+type Shape = {
+  area(): number;
+};
+
+// Use the blueprint
+class Circle1 implements Shape {
+  radius: number;
+  constructor(radius: number) {
+    this.radius = radius;
+  }
+  area(): number {
+    return Math.PI * this.radius * this.radius;
+  }
+}
+
+class Square1 implements Shape {
+  side: number;
+  constructor(side: number) {
+    this.side = side;
+  }
+  area(): number {
+    return this.side * this.side;
+  }
+}
+
+
+type circleM = {radius:number}
+type squareM = {side:number}
+type shape = circleM|squareM
+
+
+function getArea(shape: shape): number {
+  if ("radius" in shape) {
+    // ✅ Must be a Circle
+    return Math.PI * shape.radius * shape.radius;
+  } else {
+    // ✅ Must be a Square
+    return shape.side * shape.side;
+  }
+}
+
+const c: shape = { radius: 10 };
+const s: shape = { side: 5 };
+
+console.log(getArea(c)); // 314.159...
+console.log(getArea(s)); // 25
