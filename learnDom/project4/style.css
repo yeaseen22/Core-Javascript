@@ -1,0 +1,10 @@
+.content {
+  display: none;
+}
+.content.active {
+  display: block;
+  color: tomato;
+}
+.tab.active {
+  color: tomato;
+}
