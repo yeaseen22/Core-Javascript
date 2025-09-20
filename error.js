@@ -10,3 +10,15 @@ try {
 } finally {
   console.log("Congratulations your code completedly run");
 }
+
+
+/**
+ * log error gracefully
+ */
+function logAllErrorDetails(error){
+  const keys = Reflect.ownKeys(error);
+  for(const key of keys){
+    console.log(`${String(key)}:`,error[key]);
+    
+  }
+}
