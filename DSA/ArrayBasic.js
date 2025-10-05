@@ -1,13 +1,28 @@
 // function to search a key to  be deleted
+/**
+ * 
+ * @param {Array} arr 
+ * @param {Number} n 
+ * @param {Number} key 
+ * @returns 
+ */
 function findElement(arr, n, key) {
-    let i;
-    for(i=0; i<n; i++){
+    // let i;
+    for(let i=0; i < n-1; i++){
+        console.log('each element ',arr[i]);
         if(arr[i] === key){
+            console.log('hey', i);
+            
             return i;
         }
+        
         return -1;
     }
 }
+
+const resultFindElement = findElement([1,2,3,4],3, 2)
+console.log('findElement output', resultFindElement);
+
 
 // Function to delete an element
 function deleteElement(arr, n, key) {
@@ -27,6 +42,13 @@ function deleteElement(arr, n, key) {
 
 // javascript Program to Insert an element
 // at a specific position in an Array
+/**
+ * 
+ * @param {Array} arr 
+ * @param {Number} n 
+ * @param {Number} x 
+ * @param {Number} pos 
+ */
 function insertElement(arr, n, x, pos) {
     // shift elements to the right
     // which are on the right side of pos
@@ -73,9 +95,9 @@ function findSecondLargestValue2(myArr) {
 }
 
 // Test Cases to Run..
-const myArr = [3, 5, 7, 1, 4];
-const result = findSecondLargestValue2(myArr);
-console.log('Second Max - ', result);
+// const myArr = [3, 5, 7, 1, 4];
+// const result = findSecondLargestValue2(myArr);
+// console.log('Second Max - ', result);
 
 
 
@@ -97,13 +119,13 @@ function removeDuplicates(arr) {
 }
 
 // Testing
-const arr = [1, 1, 2, 3, 3];
-console.log('Before Duplicate - ', arr);
+// const arr = [1, 1, 2, 3, 3];
+// console.log('Before Duplicate - ', arr);
 
-const length = removeDuplicates(arr);
+// const length = removeDuplicates(arr);
 
-console.log("New Length:", length);
-console.log('Arr after filter duplicates - ', arr);
+// console.log("New Length:", length);
+// console.log('Arr after filter duplicates - ', arr);
 
 
 // console.log("Modified Array:", arr.slice(0, length)); // Only the unique part
@@ -136,9 +158,9 @@ function checkOccurances(arr, value) {
 const myArr2 = [1, 2, 2, 3, 4, 2];
 const value = 2;
 
-const resultOfMyArr = checkOccurances(myArr, value);
+// const resultOfMyArr = checkOccurances(myArr, value);
 
-console.log('myArr - ', resultOfMyArr);
+// console.log('myArr - ', resultOfMyArr);
 
 
 /**
@@ -168,10 +190,10 @@ const myArr4 = [1, 2, 3, 4];
 //   const myArr = [1, 3, 2];
 //   const myArr3 = [4, 3, 2];
 
-const resultOfMyArrary = checkIsArraySortedOrNot(myArr);
+// const resultOfMyArrary = checkIsArraySortedOrNot(myArr);
 const resultOfMyArr2 = checkIsArraySortedOrNot(myArr2);
 const resultOfMyArr3 = checkIsArraySortedOrNot(myArr4, 'desc');
 
-console.log('myArr - ', resultOfMyArr);
-console.log('myArr2 - ', resultOfMyArr2);
-console.log('myArr3 - ', resultOfMyArr3);
+// console.log('myArr - ', resultOfMyArr);
+// console.log('myArr2 - ', resultOfMyArr2);
+// console.log('myArr3 - ', resultOfMyArr3);
