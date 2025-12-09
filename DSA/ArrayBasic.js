@@ -7,20 +7,19 @@
  * @returns 
  */
 function findElement(arr, n, key) {
+    console.log('array', n)
     // let i;
-    for(let i=0; i < n-1; i++){
-        console.log('each element ',arr[i]);
-        if(arr[i] === key){
-            console.log('hey', i);
-            
+    for (let i = 0; i <= n; i++) {
+        console.log('each element ', arr[i]);
+        if (arr[i] === key) {
+            console.log('hey', arr[i]);
             return i;
         }
-        
-        return -1;
     }
+    return -1;
 }
 
-const resultFindElement = findElement([1,2,3,4],3, 2)
+const resultFindElement = findElement([1, 10, 3, 4], 3, 2)
 console.log('findElement output', resultFindElement);
 
 
@@ -99,8 +98,6 @@ function findSecondLargestValue2(myArr) {
 // const result = findSecondLargestValue2(myArr);
 // console.log('Second Max - ', result);
 
-
-
 function removeDuplicates(arr) {
     if (arr.length === 0) return 0;
 
@@ -111,7 +108,7 @@ function removeDuplicates(arr) {
         if (arr[j] !== arr[i]) {
             i = i + 1;
             arr[i] = arr[j];
-            
+
         }
     }
     arr.length = i + 1;

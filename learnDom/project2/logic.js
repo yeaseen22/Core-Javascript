@@ -253,7 +253,7 @@ function filterTasks(){
 
     const item = document.querySelectorAll("ul#taskList li")
     item.forEach((item) => {
-      item.style.display =   item.innerText.toLowerCase().includes(task) ? "block" : "none";
+      item.style.display = item.innerText.toLowerCase().includes(task) ? "block" : "none";
     })
 
     console.log('item', item);
