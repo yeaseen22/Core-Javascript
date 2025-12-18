@@ -13,7 +13,7 @@ class Instagram implements TakePhoto {
     public cameraMode: string,
     public filter: string,
     public burst: number
-  ) {}
+  ) { }
 }
 
 class Youtube implements TakePhoto, Story {
@@ -22,7 +22,7 @@ class Youtube implements TakePhoto, Story {
     public filter: string,
     public burst: number,
     public shorts: boolean
-  ) {}
+  ) { }
   createStory(): void {
     console.log("Story was created");
   }
