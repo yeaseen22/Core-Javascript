@@ -1,3 +1,8 @@
+/**
+ * explore js in build method
+ * gain skill without use build in method
+ */
+
 // function to search a key to  be deleted
 /**
  * 
@@ -194,3 +199,41 @@ const resultOfMyArr3 = checkIsArraySortedOrNot(myArr4, 'desc');
 // console.log('myArr - ', resultOfMyArr);
 // console.log('myArr2 - ', resultOfMyArr2);
 // console.log('myArr3 - ', resultOfMyArr3);
+
+DEFAULT_CAPACITY = 10;
+
+class CustomArray {
+    constructor(capacity = DEFAULT_CAPACITY) {
+        this.capcity = capacity;
+        this.length = 0;
+        this.array = new Array(capacity)
+    }
+
+    push(value) {
+        this.array[this.length++] = value;
+    }
+
+    insert(index, value) {
+        this.#checkIndex(index)
+
+        // last item
+        if (index === this.length) {
+            return this.push(value)
+        }
+
+        // other
+        for (let i = this.length; i > index; i--) {
+            this.array[i] = this.array[i - 1]
+        }
+
+        this.array[index] = value
+        this.length++;
+    }
+
+    #checkIndex(index) {
+        if (index < 0 || index > this.length) {
+            throw new Error('Index is out of bound')
+        }
+    }
+}
+
