@@ -209,8 +209,43 @@ class CustomArray {
         this.array = new Array(capacity)
     }
 
+    #resize() {
+        this.capcity *= 2;
+        const newArray = new Array(this.capacity)
+
+        for (let i = 0; i < this.length; i++) {
+            newArray[i] = this.array[i]
+        }
+
+        this.arrray = newArray;
+    }
+
+    #checkIndex(index, allowEqual = false) {
+        const limit = allowEqual ? this.length : this.length - 1
+        if (index < 0 || index > ) {
+            throw new Error('Index is out of bound')
+        }
+    }
+
     push(value) {
         this.array[this.length++] = value;
+    }
+
+    pop() {
+        if (this.length === 0) return undefined;
+
+        const value = this.array[this.length - 1];
+        this.array[--this.length] = undefined;
+        return value;
+    }
+
+    popAgain() {
+        if (this.length === 0) return undefined;
+
+        const value = this.array[this.length - 1];
+        this.array[--this.length] = undefined;
+
+        return value;
     }
 
     insert(index, value) {
@@ -230,10 +265,40 @@ class CustomArray {
         this.length++;
     }
 
-    #checkIndex(index) {
-        if (index < 0 || index > this.length) {
-            throw new Error('Index is out of bound')
+
+    remove(index) {
+        this.#checkIndex(index);
+
+        const value = this.array[index];
+
+        for (let i = index; i < this.length - 1; i++) {
+            this.array[i] = this.array[i + 1]
         }
+
+        this.array[--this.length] = undefined;
+        return value;
     }
+
+    get(index) {
+        this.#checkIndex(index)
+
+        return this.array[index]
+    }
+
+    set(index, value) {
+        this.#checkIndex(index)
+
+        this.array[index] = value;
+    }
+
+
+    shift() {
+        for (let i = 0; i < this.length; i++) {
+            this.array[i] = this.array[i - 1]
+        }
+        this.array[0] = undefined
+    }
+
+
 }
 
