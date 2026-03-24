@@ -222,7 +222,7 @@ class CustomArray {
 
     #checkIndex(index, allowEqual = false) {
         const limit = allowEqual ? this.length : this.length - 1
-        if (index < 0 || index > ) {
+        if (index < 0 || index > this.length) {
             throw new Error('Index is out of bound')
         }
     }
