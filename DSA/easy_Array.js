@@ -4,6 +4,8 @@ function findLargestThreeDistinctElements(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max1) {
       max1 = arr[i];
+      console.log('max1', max1);
+
     }
   }
 
@@ -11,6 +13,8 @@ function findLargestThreeDistinctElements(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max2 && arr[i] !== max1) {
       max2 = arr[i];
+      console.log('max2', max2);
+
     }
   }
 
@@ -19,6 +23,7 @@ function findLargestThreeDistinctElements(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max3 && arr[i] !== max1 && arr[i] !== max2) {
       max3 = arr[i];
+      console.log('max', max3)
     }
   }
 
@@ -44,6 +49,7 @@ function findThirdLargest(arr) {
       thirdLargest = secondLargest;
       secondLargest = firstLargest;
       firstLargest = arr[i];
+
     } else if (arr[i] > secondLargest && arr[i] !== firstLargest) {
       thirdLargest = secondLargest;
       secondLargest = arr[i];
