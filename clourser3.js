@@ -57,3 +57,11 @@ const FirstUser = createBankAccount(100)
 // console.log(FirstUser(300));
 console.log(FirstUser.deposit(300));
 
+// advantage or usefullness of clouser
+
+/**
+ * 1. you can keep variable private without exposing them
+ * 2. you can stop variable pullution
+ * 3. you can create function factory
+ * 4. you can keep a variable alive between multiple call
+ */
