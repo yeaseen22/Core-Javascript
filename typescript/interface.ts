@@ -3,6 +3,24 @@ let channelName = 'chai aur code'; // inferancing
 let chaiFlavor: string = 'masal chai'; // anotation [ ]
 chaiFlavor = 'Ginget tea'
 
+// union and any
+// union type
+let subs: number | string = '1M';
+let apiReqestStatus: 'pending' | 'error' | 'success' = 'pending';
+apiReqestStatus = 'success';
+
+let airlineSeat: 'aisle' | 'window' | 'middle' = 'aisle';
+airlineSeat = 'middle';
+
+const orders = ['13', '13', '40', '28'];
+let currentOrder; //its any type
+for (let order in orders) {
+    if (order === '28') {
+        currentOrder = order;
+        break
+    }
+}
+
 type ChaiOrder = {
     type: string;
     sugar: number;
