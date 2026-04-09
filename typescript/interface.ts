@@ -1,3 +1,8 @@
+// anotation and inferance
+let channelName = 'chai aur code'; // inferancing
+let chaiFlavor: string = 'masal chai'; // anotation [ ]
+chaiFlavor = 'Ginget tea'
+
 type ChaiOrder = {
     type: string;
     sugar: number;
