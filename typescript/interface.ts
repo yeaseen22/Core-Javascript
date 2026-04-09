@@ -21,6 +21,23 @@ for (let order in orders) {
     }
 }
 
+// type narrowing and guard
+function getChai(kind: string | number) {
+    if (typeof kind === 'string') {
+        return `Making ${kind} chai...`
+    }
+    return `Making Order ${kind}`
+}
+
+function server(chai?) {
+    if (chai) {
+        return 'serving' + chai;
+    }
+    return 'serving default masal chai'
+}
+
+
+
 type ChaiOrder = {
     type: string;
     sugar: number;
