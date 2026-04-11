@@ -12,10 +12,10 @@ function getUpper(val: string) {
 let myValue = addTwo(5);
 getUpper("hello");
 
-function signUpUser(name: string, email: string, password: string) {}
+function signUpUser(name: string, email: string, password: string) { }
 signUpUser("name", "name@gmail.com", "password");
 
-let loginUser = (name: string, email: string, isPaid: boolean = false) => {};
+let loginUser = (name: string, email: string, isPaid: boolean = false) => { };
 loginUser("name", "name@gmail.com");
 
 // function getValues (val: number):string{
@@ -35,15 +35,44 @@ heros.map((hero: string): string => {
 });
 
 
-function consoleError(errmsg: string): void{
+function consoleError(errmsg: string): void {
   console.log(errmsg);
-  
+
 }
 
-function handleError(errmsg:string): never{
+function handleError(errmsg: string): never {
   throw new Error(errmsg)
 }
 
 
 
-export {};
+export { };
+
+function makeChai(type: string, cup: number) {
+  console.log('make ' + cup ' cup of ' + type);
+
+}
+makeChai('masala', 5)
+
+function getChaiPrice(): number {
+  return 10
+}
+getChaiPrice()
+function makeOrdrer(order: string) {
+  if (!order) return null
+  return order
+}
+
+function logChai(): void {
+  console.log('chai is ready');
+}
+
+function orderChai(type?: string) {
+
+}
+
+function orderChai2(type: string = 'masala')
+
+function createChai(order: { type: string; sugar: number; size: 'small' | 'mediam' | 'large' }): number {
+  return 4
+}

@@ -70,3 +70,70 @@ let smallCup: Cup = { size: "200ml" }
 
 let bigCup = { size: '500ml', material: "steal" }
 smallCup = bigCup
+
+type Brew = { brewTime: number }
+const coffee = { brewTime: 5, beans: 'Arabic' }
+const chaiBrew: Brew = coffee
+
+type User = {
+    username: string;
+    password: string;
+}
+
+const u: User = {
+    username = 'chai aur code',
+    password = '123'
+}
+
+type Item = { name: string, quantity: number }
+type Address = { streat: string, pin: number }
+
+type Order = {
+    id: string;
+    items: Item[];
+    address: Address
+}
+let Chai: {
+    name: string;
+    isPrice: number;
+    isHot: boolean;
+}
+
+const updateChai = (update: Partial<chai>) => {
+    console.log('updating...', update);
+
+}
+updateChai({ price: 30 })
+updateChai({})
+
+type chaiOrder = {
+    name?: string;
+    quantity: number
+}
+
+const placeOrder = (order: Required<ChaiOrder>) => {
+    console.log('order', order);
+}
+placeOrder({ name: 'masala chai', quantity: 5 })
+
+type Chai = {
+    name: string;
+    price: number;
+    isHot: boolean;
+    ingradient: string[]
+}
+
+type BasicChai = Pick<Chai, "name" | "price">
+
+const chaiInpfo: BasicChai = {
+    name: "lemon", price: 30
+}
+
+type ChaiNew = {
+    name: string;
+    price: number;
+    isHot: boolean;
+    secretIngradient: string[]
+};
+
+type PublicChai = Omit<ChaiNew, "secretIngradient">
