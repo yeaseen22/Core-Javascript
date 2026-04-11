@@ -44,14 +44,12 @@ type ChaiOrder = {
     strong: boolean;
 }
 
-function makeChat(order: ChaiOrder) {
+function makeChai(order: ChaiOrder) {
     console.log(order);
-
 }
 
 function serveChai(order: ChaiOrder) {
     console.log(order);
-
 }
 
 type TeaRecipe = {
@@ -67,7 +65,6 @@ class MasalaChai implements TeaRecipe {
 // type CupSize = 'small' | 'large'
 interface CupSize { size: 'small' | 'large' }
 
-
 class Chat implements CupSize {
     size: "small" | "large" = 'large'
 }
@@ -78,6 +75,7 @@ class Chat implements CupSize {
 //     ok: boolean = true;
 // }
 
+// literal type
 type TeaType = 'masala' | 'ginger' | 'lemon';
 
 function orderChai(t: TeaType) {
@@ -87,6 +85,7 @@ function orderChai(t: TeaType) {
 type BaseChai = { teaLevels: number }
 type Extra = { masala: number }
 
+// intersection
 type MasalahChai = BaseChai & Extra;
 
 const cup: MasalahChai = {
@@ -111,3 +110,4 @@ const cfg: Config = {
     version: 1
 }
 
+cfg.appName = 'chaiaurcode' // not possible to assign
