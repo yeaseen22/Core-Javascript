@@ -187,3 +187,43 @@ return {
 // Test your implementation
 const cart = ShoppingCart.getInstance();
 
+
+const shoppingCartTwo = (function () {
+  let instance;
+
+  function createInstance() {
+    let items = [];
+    let discountCode = null;
+    let textRate = 0.08;
+
+    return {
+      addItems(name, price, quantity) {
+        const existingItem = items.find((item) => item.name === name);
+        if (existingItem) {
+          existingItem.quantity += quantity;
+        } else {
+          items.push({ name, price, quantity })
+        }
+
+        console.log(`✅ Added ${quantity}x ${name} to cart`);
+
+        return this.getSummary()
+      }
+
+      removeItems(name) {
+        const initialLength = items.length;
+
+        items = items.filter((item) => item.name !== name)
+
+        if (items.length < initialLength) {
+          console.log(`🗑️ Removed ${name} from cart`);
+        } else {
+          console.log(`⚠️ ${name} not found in cart`);
+        }
+
+        return this.getSummary()
+      }
+    }
+  }
+})()
+
