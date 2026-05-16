@@ -16,7 +16,11 @@ function main() {
     const chnageBtn = document.getElementById('change-btn')
     const output = document.getElementById('output')
     const copyBtn = document.getElementById('copy-btn')
+    const copyBtn2 = document.getElementById('copy-btn2')
     const output2 = document.getElementById('output2')
+
+    console.log('btn2', copyBtn2);
+
 
 
     chnageBtn.addEventListener('click', function () {
@@ -42,6 +46,17 @@ function main() {
             alert('Not a valid color code')
         }
     })
+
+    copyBtn2.addEventListener('click', function () {
+        navigation.clipboard.writeText(`#${output2.value}`)
+        if (div !== null) {
+            div.remove();
+            div = null;
+        }
+
+    })
+
+
 
     output.addEventListener('keyup', function (e) {
         const color = e.target.value;
@@ -97,7 +112,7 @@ function generateColorDecimal() {
  * function2 generate hex color code
  * @param {*} msg 
  */
-function generateHEXColor({red, green, blue}) {
+function generateHEXColor({ red, green, blue }) {
 
     // const { red, green, blue } = generateColorDecimal();
 
